@@ -16,6 +16,7 @@ namespace PaymentGateway.Models
 
         public int IdTransaction;
         public ServiceList ServiceIdList;
+        public double Value;
         
 
     }

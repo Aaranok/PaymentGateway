@@ -25,7 +25,6 @@ namespace PaymentGateway.Application.WriteOperations
         {
             var random = new Random();
             var account = database.GetAccountByInfo(operation.Iban);
-           // var person = database.GetPersonByCnp(operation.Cnp);
 
             if (account == null)
             {
@@ -63,6 +62,7 @@ namespace PaymentGateway.Application.WriteOperations
             transaction.DateOfOperation = transaction.GetOpDate();
             transaction.Type = "Purchase";
             transaction.Id = database.Transactions.Count() + 1;
+            transaction.Value = totalValue;
 
             database.Transactions.Add(transaction);
 
