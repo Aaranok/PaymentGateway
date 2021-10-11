@@ -12,6 +12,7 @@ namespace PaymentGateway.Models
         public double Value { get; set; }
         public string Currency { get; set; }
         public int Limit { get; set; }
+        public int Id { get; set; }
 
     }
 }

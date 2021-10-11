@@ -12,3 +12,8 @@ C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.ExternalServi
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.ExternalService\obj\Debug\net5.0\PaymentGateway.ExternalService.dll
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.ExternalService\obj\Debug\net5.0\ref\PaymentGateway.ExternalService.dll
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.ExternalService\obj\Debug\net5.0\PaymentGateway.ExternalService.pdb
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.ExternalService\bin\Debug\net5.0\PaymentGateway.Data.dll
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.ExternalService\bin\Debug\net5.0\PaymentGateway.Models.dll
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.ExternalService\bin\Debug\net5.0\PaymentGateway.Data.pdb
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.ExternalService\bin\Debug\net5.0\PaymentGateway.Models.pdb
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.ExternalService\obj\Debug\net5.0\PaymentGateway.ExternalService.csproj.CopyComplete

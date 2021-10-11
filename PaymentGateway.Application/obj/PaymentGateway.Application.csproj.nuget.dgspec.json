@@ -27,7 +27,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Data\\PaymentGateway.Data.csproj": {
+                "projectPath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Data\\PaymentGateway.Data.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -260,7 +264,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Models\\PaymentGateway.Models.csproj": {
+                "projectPath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Models\\PaymentGateway.Models.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

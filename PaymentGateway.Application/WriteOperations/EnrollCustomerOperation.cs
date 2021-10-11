@@ -14,16 +14,15 @@ namespace PaymentGateway.Application.WriteOperations
         {
             this.eventSender = eventSender;
         }
-        public void PerformOperation(EnrollCustomerCommand operation)
+        public void PerformOperation(EnrollCustomerCommand operation, Database database)
         {
 
-            //var Database = new Database();
             var random = new Random();
-            Database database = Database.GetInstance();
+            //Database database = Database.GetInstance();
             Person person = new Person();
             person.Cnp = operation.Cnp;
             person.Name = operation.Name;
-            //person.Type = operation.ClientType;
+
             if (operation.ClientType == "Company")
                 person.Type = (int)PersonType.Company;
             else if (operation.ClientType == "Individual")

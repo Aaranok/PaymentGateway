@@ -5,6 +5,9 @@
       "PaymentGateway.Abstractions/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "PaymentGateway.Data": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/PaymentGateway.Abstractions.dll": {}
         },
@@ -67,6 +70,9 @@
       "PaymentGateway.PublishedLanguage/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "PaymentGateway.Models": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/PaymentGateway.PublishedLanguage.dll": {}
         },

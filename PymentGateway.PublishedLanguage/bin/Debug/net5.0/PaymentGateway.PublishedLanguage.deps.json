@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v5.0": {
       "PaymentGateway.PublishedLanguage/1.0.0": {
+        "dependencies": {
+          "PaymentGateway.Models": "1.0.0"
+        },
         "runtime": {
           "PaymentGateway.PublishedLanguage.dll": {}
+        }
+      },
+      "PaymentGateway.Models/1.0.0": {
+        "runtime": {
+          "PaymentGateway.Models.dll": {}
         }
       }
     }
   },
   "libraries": {
     "PaymentGateway.PublishedLanguage/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PaymentGateway.Models/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

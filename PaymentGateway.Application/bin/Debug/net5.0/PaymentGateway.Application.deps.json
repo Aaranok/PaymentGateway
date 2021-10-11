@@ -18,6 +18,9 @@
         }
       },
       "PaymentGateway.Abstractions/1.0.0": {
+        "dependencies": {
+          "PaymentGateway.Data": "1.0.0"
+        },
         "runtime": {
           "PaymentGateway.Abstractions.dll": {}
         }
@@ -36,6 +39,9 @@
         }
       },
       "PaymentGateway.PublishedLanguage/1.0.0": {
+        "dependencies": {
+          "PaymentGateway.Models": "1.0.0"
+        },
         "runtime": {
           "PaymentGateway.PublishedLanguage.dll": {}
         }

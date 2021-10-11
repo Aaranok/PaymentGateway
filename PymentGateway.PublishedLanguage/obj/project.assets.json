@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "PaymentGateway.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/PaymentGateway.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PaymentGateway.Models.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "PaymentGateway.Models/1.0.0": {
+      "type": "project",
+      "path": "../PaymentGateway.Models/PaymentGateway.Models.csproj",
+      "msbuildProject": "../PaymentGateway.Models/PaymentGateway.Models.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "PaymentGateway.Models >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Models\\PaymentGateway.Models.csproj": {
+              "projectPath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Models\\PaymentGateway.Models.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

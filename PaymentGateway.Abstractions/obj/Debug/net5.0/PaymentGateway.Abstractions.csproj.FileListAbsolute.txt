@@ -10,3 +10,8 @@ C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.Abstractions\
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.Abstractions\obj\Debug\net5.0\PaymentGateway.Abstractions.dll
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.Abstractions\obj\Debug\net5.0\ref\PaymentGateway.Abstractions.dll
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.Abstractions\obj\Debug\net5.0\PaymentGateway.Abstractions.pdb
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.Abstractions\bin\Debug\net5.0\PaymentGateway.Data.dll
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.Abstractions\bin\Debug\net5.0\PaymentGateway.Models.dll
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.Abstractions\bin\Debug\net5.0\PaymentGateway.Data.pdb
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.Abstractions\bin\Debug\net5.0\PaymentGateway.Models.pdb
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.Abstractions\obj\Debug\net5.0\PaymentGateway.Abstractions.csproj.CopyComplete

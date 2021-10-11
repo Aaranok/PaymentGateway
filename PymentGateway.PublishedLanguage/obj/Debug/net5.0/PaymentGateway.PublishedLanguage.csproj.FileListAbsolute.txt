@@ -10,3 +10,6 @@ C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PymentGateway.PublishedLangu
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PymentGateway.PublishedLanguage\obj\Debug\net5.0\PaymentGateway.PublishedLanguage.dll
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PymentGateway.PublishedLanguage\obj\Debug\net5.0\ref\PaymentGateway.PublishedLanguage.dll
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PymentGateway.PublishedLanguage\obj\Debug\net5.0\PaymentGateway.PublishedLanguage.pdb
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PymentGateway.PublishedLanguage\bin\Debug\net5.0\PaymentGateway.Models.dll
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PymentGateway.PublishedLanguage\bin\Debug\net5.0\PaymentGateway.Models.pdb
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PymentGateway.PublishedLanguage\obj\Debug\net5.0\PaymentGateway.PublishedLanguage.csproj.CopyComplete

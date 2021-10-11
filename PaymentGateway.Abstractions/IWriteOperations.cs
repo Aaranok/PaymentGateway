@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PaymentGateway.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace PaymentGateway.Abstractions
 {
     public interface IWriteOperations<T>
     {
-        public void PerformOperation(T operation);
+        public void PerformOperation(T operation, Database DB);
     }
 }
