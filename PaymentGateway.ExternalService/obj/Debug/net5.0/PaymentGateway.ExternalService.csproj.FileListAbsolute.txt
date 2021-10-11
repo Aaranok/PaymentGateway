@@ -1,0 +1,14 @@
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.ExternalService\bin\Debug\net5.0\PaymentGateway.ExternalService.deps.json
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.ExternalService\bin\Debug\net5.0\PaymentGateway.ExternalService.dll
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.ExternalService\bin\Debug\net5.0\ref\PaymentGateway.ExternalService.dll
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.ExternalService\bin\Debug\net5.0\PaymentGateway.ExternalService.pdb
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.ExternalService\bin\Debug\net5.0\PaymentGateway.Abstractions.dll
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.ExternalService\bin\Debug\net5.0\PaymentGateway.Abstractions.pdb
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.ExternalService\obj\Debug\net5.0\PaymentGateway.ExternalService.csproj.AssemblyReference.cache
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.ExternalService\obj\Debug\net5.0\PaymentGateway.ExternalService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.ExternalService\obj\Debug\net5.0\PaymentGateway.ExternalService.AssemblyInfoInputs.cache
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.ExternalService\obj\Debug\net5.0\PaymentGateway.ExternalService.AssemblyInfo.cs
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.ExternalService\obj\Debug\net5.0\PaymentGateway.ExternalService.csproj.CoreCompileInputs.cache
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.ExternalService\obj\Debug\net5.0\PaymentGateway.ExternalService.dll
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.ExternalService\obj\Debug\net5.0\ref\PaymentGateway.ExternalService.dll
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.ExternalService\obj\Debug\net5.0\PaymentGateway.ExternalService.pdb

@@ -1,0 +1,72 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "PaymentGateway.Application/1.0.0": {
+        "dependencies": {
+          "PaymentGateway.Abstractions": "1.0.0",
+          "PaymentGateway.Data": "1.0.0",
+          "PaymentGateway.Models": "1.0.0",
+          "PaymentGateway.PublishedLanguage": "1.0.0"
+        },
+        "runtime": {
+          "PaymentGateway.Application.dll": {}
+        }
+      },
+      "PaymentGateway.Abstractions/1.0.0": {
+        "runtime": {
+          "PaymentGateway.Abstractions.dll": {}
+        }
+      },
+      "PaymentGateway.Data/1.0.0": {
+        "dependencies": {
+          "PaymentGateway.Models": "1.0.0"
+        },
+        "runtime": {
+          "PaymentGateway.Data.dll": {}
+        }
+      },
+      "PaymentGateway.Models/1.0.0": {
+        "runtime": {
+          "PaymentGateway.Models.dll": {}
+        }
+      },
+      "PaymentGateway.PublishedLanguage/1.0.0": {
+        "runtime": {
+          "PaymentGateway.PublishedLanguage.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PaymentGateway.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PaymentGateway.Abstractions/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PaymentGateway.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PaymentGateway.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PaymentGateway.PublishedLanguage/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

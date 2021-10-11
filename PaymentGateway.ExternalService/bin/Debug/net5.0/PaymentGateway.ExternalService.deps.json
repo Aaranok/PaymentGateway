@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "PaymentGateway.ExternalService/1.0.0": {
+        "dependencies": {
+          "PaymentGateway.Abstractions": "1.0.0"
+        },
+        "runtime": {
+          "PaymentGateway.ExternalService.dll": {}
+        }
+      },
+      "PaymentGateway.Abstractions/1.0.0": {
+        "runtime": {
+          "PaymentGateway.Abstractions.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PaymentGateway.ExternalService/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PaymentGateway.Abstractions/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,12 @@
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PymentGateway.PublishedLanguage\bin\Debug\net5.0\PaymentGateway.PublishedLanguage.deps.json
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PymentGateway.PublishedLanguage\bin\Debug\net5.0\PaymentGateway.PublishedLanguage.dll
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PymentGateway.PublishedLanguage\bin\Debug\net5.0\ref\PaymentGateway.PublishedLanguage.dll
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PymentGateway.PublishedLanguage\bin\Debug\net5.0\PaymentGateway.PublishedLanguage.pdb
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PymentGateway.PublishedLanguage\obj\Debug\net5.0\PaymentGateway.PublishedLanguage.csproj.AssemblyReference.cache
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PymentGateway.PublishedLanguage\obj\Debug\net5.0\PaymentGateway.PublishedLanguage.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PymentGateway.PublishedLanguage\obj\Debug\net5.0\PaymentGateway.PublishedLanguage.AssemblyInfoInputs.cache
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PymentGateway.PublishedLanguage\obj\Debug\net5.0\PaymentGateway.PublishedLanguage.AssemblyInfo.cs
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PymentGateway.PublishedLanguage\obj\Debug\net5.0\PaymentGateway.PublishedLanguage.csproj.CoreCompileInputs.cache
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PymentGateway.PublishedLanguage\obj\Debug\net5.0\PaymentGateway.PublishedLanguage.dll
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PymentGateway.PublishedLanguage\obj\Debug\net5.0\ref\PaymentGateway.PublishedLanguage.dll
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PymentGateway.PublishedLanguage\obj\Debug\net5.0\PaymentGateway.PublishedLanguage.pdb
