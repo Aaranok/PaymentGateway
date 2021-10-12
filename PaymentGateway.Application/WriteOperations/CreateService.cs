@@ -33,5 +33,10 @@ namespace PaymentGateway.Application.WriteOperations
             ServiceCreated eventServCreated = new(operation.Name, operation.Value, operation.Limit, operation.Currency);
             eventSender.SendEvent(eventServCreated);
         }
+
+        public void PerformOperation(CreateServiceCommand operation)
+        {
+            //throw new NotImplementedException();
+        }
     }
 }

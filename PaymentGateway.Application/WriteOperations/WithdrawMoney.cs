@@ -48,5 +48,10 @@ namespace PaymentGateway.Application.WriteOperations
             database.SaveChange();
 
         }
+
+        public void PerformOperation(WithdrawMoneyCommand operation)
+        {
+           // throw new NotImplementedException();
+        }
     }
 }

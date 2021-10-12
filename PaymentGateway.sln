@@ -22,7 +22,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentGateway.Abstractions
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentGateway.ExternalService", "PaymentGateway.ExternalService\PaymentGateway.ExternalService.csproj", "{F291F696-E09E-4B5A-A9F5-EB2DE6DD37E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test\test.csproj", "{8C5DF280-7F79-4C5A-A917-343DE4772242}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "test", "test\test.csproj", "{8C5DF280-7F79-4C5A-A917-343DE4772242}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F44A4A4C-4AF9-4691-B218-A0DCA34A65D8}"
+	ProjectSection(SolutionItems) = preProject
+		dependencies.props = dependencies.props
+		Directory.Build.props = Directory.Build.props
+		NuGet.config = NuGet.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentGateway.WebAPI", "PaymentGateway.WebAPI\PaymentGateway.WebAPI.csproj", "{21959158-661D-46C3-9D9C-B21AD3886186}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -62,6 +71,10 @@ Global
 		{8C5DF280-7F79-4C5A-A917-343DE4772242}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C5DF280-7F79-4C5A-A917-343DE4772242}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C5DF280-7F79-4C5A-A917-343DE4772242}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21959158-661D-46C3-9D9C-B21AD3886186}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21959158-661D-46C3-9D9C-B21AD3886186}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21959158-661D-46C3-9D9C-B21AD3886186}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21959158-661D-46C3-9D9C-B21AD3886186}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

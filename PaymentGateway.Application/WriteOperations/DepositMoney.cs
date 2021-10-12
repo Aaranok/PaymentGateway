@@ -55,5 +55,10 @@ namespace PaymentGateway.Application.WriteOperations
 
 
         }
+
+        public void PerformOperation(DepositMoneyCommand operation)
+        {
+           // throw new NotImplementedException();
+        }
     }
 }

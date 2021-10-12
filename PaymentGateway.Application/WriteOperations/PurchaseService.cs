@@ -85,5 +85,10 @@ namespace PaymentGateway.Application.WriteOperations
 
 
         }
+
+        public void PerformOperation(PurchaseServiceCommand operation)
+        {
+            //throw new NotImplementedException();
+        }
     }
 }
