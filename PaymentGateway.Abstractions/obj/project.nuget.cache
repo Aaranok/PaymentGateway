@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cErEcZwuWw+/Q/ucAl+BKIC1/01NKeZ+nhyngcv00/9zrtI9cpdnBvbwAvOsd68rMU6GDJ0cMjLZxFZ3kWwf4A==",
+  "dgSpecHash": "2DtK6a/6RVg6b2L/WUA0LQZB9lmtC3t23ofgQPCPCKcT5p9+LNe/parqa/Hi0iy/XUBjWiFrjzxX7eilrZtx0g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Abstractions\\PaymentGateway.Abstractions.csproj",
+  "projectFilePath": "D:\\Work\\GIT\\PaymentGateway\\PaymentGateway.Abstractions\\PaymentGateway.Abstractions.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

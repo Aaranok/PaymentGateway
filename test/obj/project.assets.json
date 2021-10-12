@@ -8,20 +8,20 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\": {}
+    "C:\\Users\\vladi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\test\\test.csproj",
+      "projectUniqueName": "D:\\Work\\GIT\\PaymentGateway\\test\\test.csproj",
       "projectName": "test",
-      "projectPath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\test\\test.csproj",
-      "packagesPath": "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\test\\obj\\",
+      "projectPath": "D:\\Work\\GIT\\PaymentGateway\\test\\test.csproj",
+      "packagesPath": "C:\\Users\\vladi\\.nuget\\packages\\",
+      "outputPath": "D:\\Work\\GIT\\PaymentGateway\\test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\NuGet.Config",
-        "C:\\Users\\vlad.iacobescu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "D:\\Work\\GIT\\PaymentGateway\\NuGet.Config",
+        "C:\\Users\\vladi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -61,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

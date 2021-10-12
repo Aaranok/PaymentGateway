@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0SHVHJho++5KhNMjLbddaLk9dqVElORPkwhhCtrNOvMj+XB4vQ49AWSYDDLRAskv5LieMgH0GRej1Y/6b7xZXA==",
+  "dgSpecHash": "ZLXUBrFFhIyq06GDN0ofv/HaQtFXd1UkwIgpUjhXtRzKTgtqLZktDYTX/5hG6DP2EtTPwzgUPe9fJ4Q2BBBDqg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Models\\PaymentGateway.Models.csproj",
+  "projectFilePath": "D:\\Work\\GIT\\PaymentGateway\\PaymentGateway.Models\\PaymentGateway.Models.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

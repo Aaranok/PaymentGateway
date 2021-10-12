@@ -13,11 +13,13 @@ namespace PaymentGateway.Application.WriteOperations
 {
     public class CreateService : IWriteOperations<CreateServiceCommand>
     {
-        public IEventSender eventSender;
+        private readonly IEventSender _eventSender;
+        private readonly Database _database;
 
-        public CreateService(IEventSender eventSender)
+        public CreateService(IEventSender eventSender, Database database)
         {
-            this.eventSender = eventSender;
+            _eventSender = eventSender;
+            _database = database;
         }
         public void PerformOperation(CreateServiceCommand operation, Database database)
         {
@@ -31,12 +33,23 @@ namespace PaymentGateway.Application.WriteOperations
             database.Services.Add(service);
             database.SaveChange();
             ServiceCreated eventServCreated = new(operation.Name, operation.Value, operation.Limit, operation.Currency);
-            eventSender.SendEvent(eventServCreated);
+            _eventSender.SendEvent(eventServCreated);
         }
 
         public void PerformOperation(CreateServiceCommand operation)
         {
-            //throw new NotImplementedException();
+            Service service = new Service
+            {
+                Value = operation.Value,
+                Name = operation.Name,
+                Limit = operation.Limit,
+                Currency = operation.Currency
+            };
+
+            _database.Services.Add(service);
+            _database.SaveChange();
+            ServiceCreated eventServCreated = new(operation.Name, operation.Value, operation.Limit, operation.Currency);
+            _eventSender.SendEvent(eventServCreated);
         }
     }
 }

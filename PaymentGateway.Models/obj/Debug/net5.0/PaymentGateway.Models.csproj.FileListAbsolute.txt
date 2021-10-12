@@ -10,3 +10,15 @@ C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.Models\obj\De
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.Models\obj\Debug\net5.0\PaymentGateway.Models.dll
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.Models\obj\Debug\net5.0\ref\PaymentGateway.Models.dll
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.Models\obj\Debug\net5.0\PaymentGateway.Models.pdb
+D:\Work\GIT\PaymentGateway\PaymentGateway.Models\bin\Debug\net5.0\PaymentGateway.Models.deps.json
+D:\Work\GIT\PaymentGateway\PaymentGateway.Models\bin\Debug\net5.0\PaymentGateway.Models.dll
+D:\Work\GIT\PaymentGateway\PaymentGateway.Models\bin\Debug\net5.0\ref\PaymentGateway.Models.dll
+D:\Work\GIT\PaymentGateway\PaymentGateway.Models\bin\Debug\net5.0\PaymentGateway.Models.pdb
+D:\Work\GIT\PaymentGateway\PaymentGateway.Models\obj\Debug\net5.0\PaymentGateway.Models.csproj.AssemblyReference.cache
+D:\Work\GIT\PaymentGateway\PaymentGateway.Models\obj\Debug\net5.0\PaymentGateway.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\Work\GIT\PaymentGateway\PaymentGateway.Models\obj\Debug\net5.0\PaymentGateway.Models.AssemblyInfoInputs.cache
+D:\Work\GIT\PaymentGateway\PaymentGateway.Models\obj\Debug\net5.0\PaymentGateway.Models.AssemblyInfo.cs
+D:\Work\GIT\PaymentGateway\PaymentGateway.Models\obj\Debug\net5.0\PaymentGateway.Models.csproj.CoreCompileInputs.cache
+D:\Work\GIT\PaymentGateway\PaymentGateway.Models\obj\Debug\net5.0\PaymentGateway.Models.dll
+D:\Work\GIT\PaymentGateway\PaymentGateway.Models\obj\Debug\net5.0\ref\PaymentGateway.Models.dll
+D:\Work\GIT\PaymentGateway\PaymentGateway.Models\obj\Debug\net5.0\PaymentGateway.Models.pdb

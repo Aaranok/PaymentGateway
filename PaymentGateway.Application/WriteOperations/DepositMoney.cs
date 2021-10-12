@@ -1,4 +1,5 @@
 ﻿using PaymentGateway.Abstractions;
+using PaymentGateway.Application.ReadOperations;
 using PaymentGateway.Data;
 using PaymentGateway.Models;
 using PaymentGateway.PublishedLanguage.Events;
@@ -13,11 +14,13 @@ namespace PaymentGateway.Application.WriteOperations
 {
     public class DepositMoney: IWriteOperations<DepositMoneyCommand>
     {
-        public IEventSender eventSender;
+        private readonly IEventSender _eventSender;
+        private readonly Database _database;
 
-        public DepositMoney(IEventSender eventSender)
+        public DepositMoney(IEventSender eventSender, Database database)
         {
-            this.eventSender = eventSender;
+            _eventSender = eventSender;
+            _database = database;
         }
 
         public void PerformOperation(DepositMoneyCommand operation, Database database)
@@ -39,7 +42,7 @@ namespace PaymentGateway.Application.WriteOperations
             //database.SaveChange();
 
             TransactionCreated eventTransCreated = new(operation.DateOfTransaction, transaction.Type, operation.Currency, operation.Amount, operation.Iban);
-            eventSender.SendEvent(eventTransCreated);
+            _eventSender.SendEvent(eventTransCreated);
 
 
             //if (DateTime.UtcNow >= transaction.DateOfOperation)
@@ -50,7 +53,7 @@ namespace PaymentGateway.Application.WriteOperations
             //}
             account.Balance += transaction.Amount;
             DepositDone eventDepDone = new(operation.Iban, operation.Currency, operation.Amount, operation.DateOfOperation);
-            eventSender.SendEvent(eventDepDone);
+            _eventSender.SendEvent(eventDepDone);
             database.SaveChange();
 
 
@@ -58,7 +61,28 @@ namespace PaymentGateway.Application.WriteOperations
 
         public void PerformOperation(DepositMoneyCommand operation)
         {
-           // throw new NotImplementedException();
+            //var account = _database.GetAccountByInfo(operation.Iban);
+            var accountIdent = new AccountIbanOperations(_database);
+            var account = accountIdent.GetAccountByIban(operation.Iban);
+            if (account == null)
+            {
+                throw new Exception("Account not found");
+            }
+
+            Transaction transaction = new Transaction();
+            transaction.Amount = operation.Amount;
+            transaction.Currency = operation.Currency;
+            transaction.DateOfTransaction = operation.DateOfTransaction;
+            transaction.DateOfOperation = transaction.GetOpDate();
+            transaction.Type = "Deposit";
+
+            TransactionCreated eventTransCreated = new(operation.DateOfTransaction, transaction.Type, operation.Currency, operation.Amount, operation.Iban);
+            _eventSender.SendEvent(eventTransCreated);
+
+            account.Balance += transaction.Amount;
+            DepositDone eventDepDone = new(operation.Iban, operation.Currency, operation.Amount, operation.DateOfOperation);
+            _eventSender.SendEvent(eventDepDone);
+            _database.SaveChange();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using PaymentGateway.Data;
+using PaymentGateway.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,15 @@ namespace PaymentGateway.Application.ReadOperations
                 if (item.Cnp == cnp)
                     return item.Accounts[0].IbanCode;
                 return null;
+            }
+            return null;
+        }
+        public Account GetAccountByIban(string iban)
+        {
+            foreach (var item in _database.Accounts)
+            {
+                if (item.IbanCode == iban)
+                    return item;
             }
             return null;
         }

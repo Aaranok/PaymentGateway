@@ -8,7 +8,7 @@ namespace PaymentGateway.Abstractions
 {
     public class IReadOperations<T>
     {
-        public void PerformOperation(T operation);
-
+        public void PerformOperation(T operation)
+        {}
     }
 }

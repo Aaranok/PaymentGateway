@@ -59,7 +59,7 @@ namespace PaymentGateway
 
             var createAccount1 = serviceProvider.GetRequiredService<CreateAccount>();
             createAccount1.PerformOperation(account1);
-            //~~~~~~~~~~~~~~~~~~~~~~~~fix from here
+
             DepositMoneyCommand depMoney = new DepositMoneyCommand();
             depMoney.DateOfTransaction = DateTime.UtcNow.AddDays(-3);
             depMoney.DateOfOperation = DateTime.UtcNow;
@@ -70,17 +70,19 @@ namespace PaymentGateway
             depMoney.Iban = getIbanOp.GetIbanByCnp(account1.Cnp);
 
             DepositMoney depMoneyEvent1 = serviceProvider.GetRequiredService<DepositMoney>();
-            depMoneyEvent1.PerformOperation(depMoney, DB);
+            depMoneyEvent1.PerformOperation(depMoney);
 
             WithdrawMoneyCommand witMoneyCmd = new WithdrawMoneyCommand();
             witMoneyCmd.Amount = 100;
             witMoneyCmd.Currency = "$";
             witMoneyCmd.DateOfTransaction = DateTime.UtcNow.AddDays(-2);
             witMoneyCmd.DateOfOperation = DateTime.UtcNow;
-            witMoneyCmd.Iban = DB.GetIbanByCnp(account1.Cnp);
+            //witMoneyCmd.Iban = DB.GetIbanByCnp(account1.Cnp);
+            //AccountIbanOperations getIbanOp = new AccountIbanOperations(DB);
+            depMoney.Iban = getIbanOp.GetIbanByCnp(account1.Cnp);
 
             WithdrawMoney withdrawMoneyEvent = serviceProvider.GetRequiredService<WithdrawMoney>();
-            withdrawMoneyEvent.PerformOperation(witMoneyCmd, DB);
+            withdrawMoneyEvent.PerformOperation(witMoneyCmd);
 
             CreateServiceCommand createServCmd = new CreateServiceCommand();
             createServCmd.Limit = 50;
@@ -89,7 +91,7 @@ namespace PaymentGateway
             createServCmd.Currency = "$";
 
             CreateService createServiceEvent = serviceProvider.GetRequiredService<CreateService>();
-            createServiceEvent.PerformOperation(createServCmd, DB);
+            createServiceEvent.PerformOperation(createServCmd);
 
             CreateServiceCommand createServCmd2 = new CreateServiceCommand();
             createServCmd2.Limit = 2;
@@ -98,26 +100,30 @@ namespace PaymentGateway
             createServCmd2.Currency = "$";
 
             CreateService createServiceEvent2 = serviceProvider.GetRequiredService<CreateService>();
-            createServiceEvent2.PerformOperation(createServCmd2, DB);
+            createServiceEvent2.PerformOperation(createServCmd2);
 
             PurchaseServiceCommand purchaseService = new PurchaseServiceCommand();
-            purchaseService.Iban = DB.GetIbanByCnp(account1.Cnp);
+            //purchaseService.Iban = DB.GetIbanByCnp(account1.Cnp);
+            purchaseService.Iban = getIbanOp.GetIbanByCnp(account1.Cnp);
             purchaseService.personName = "Gigi";
             purchaseService.DateOfTransaction = DateTime.UtcNow;
 
             ServiceList listItem;
             Service aux = new Service();
-            aux = DB.GetServiceFromName("Schema");
+            //aux = DB.GetServiceFromName("Schema");
+            ServiceReadOperations servRead = new ServiceReadOperations();
+            aux = servRead.GetServiceByName("Schema");
             listItem.IdService = aux.Id;
             listItem.NoPurchased = 2;
             purchaseService.Product.Add(listItem);
-            aux = DB.GetServiceFromName("Schema2");
+            //aux = DB.GetServiceFromName("Schema2");
+            aux = servRead.GetServiceByName("Schema2");
             listItem.IdService = aux.Id;
             listItem.NoPurchased = 2;
             purchaseService.Product.Add(listItem);
 
             PurchaseService purchaseServiceEvent = serviceProvider.GetRequiredService<PurchaseService>();
-            purchaseServiceEvent.PerformOperation(purchaseService, DB);
+            purchaseServiceEvent.PerformOperation(purchaseService);
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             //~~~~~~~~~~~~~~~~~~~~~         ZA OLD TINGS            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

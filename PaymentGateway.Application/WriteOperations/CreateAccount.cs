@@ -15,8 +15,6 @@ namespace PaymentGateway.Application.WriteOperations
 {
     public class CreateAccount : IWriteOperations<CreateAccountCommand>
     {
-        //private readonly IEventSender _eventSender;
-        //private readonly Database _database;
 
         //public CreateAccount(IEventSender eventSender)
         //{
