@@ -18,6 +18,7 @@ namespace PaymentGateway.Application.ReadOperations
 
         public string GetIbanByCnp(string cnp)
         {
+
             foreach (var item in _database.Persons)
             {
                 if (item.Cnp == cnp)

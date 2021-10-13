@@ -60,7 +60,6 @@ C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.WebAPI\bin\De
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.WebAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.WebAPI\obj\Debug\net5.0\PaymentGateway.WebAPI.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.WebAPI\obj\Debug\net5.0\PaymentGateway.WebAPI.csproj.CopyComplete
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.WebAPI\bin\Debug\net5.0\PaymentGateway.deps.json
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.WebAPI\bin\Debug\net5.0\PaymentGateway.runtimeconfig.json
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.WebAPI\bin\Debug\net5.0\PaymentGateway.runtimeconfig.dev.json
@@ -166,3 +165,4 @@ D:\Work\GIT\PaymentGateway\PaymentGateway.WebAPI\obj\Debug\net5.0\scopedcss\bund
 D:\Work\GIT\PaymentGateway\PaymentGateway.WebAPI\obj\Debug\net5.0\PaymentGateway.WebAPI.RazorTargetAssemblyInfo.cache
 D:\Work\GIT\PaymentGateway\PaymentGateway.WebAPI\obj\Debug\net5.0\PaymentGateway.WebAPI.csproj.CopyComplete
 D:\Work\GIT\PaymentGateway\PaymentGateway.WebAPI\obj\Debug\net5.0\PaymentGateway.WebAPI.genruntimeconfig.cache
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.WebAPI\obj\Debug\net5.0\PaymentGateway.WebAPI.csproj.CopyComplete

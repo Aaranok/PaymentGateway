@@ -24,10 +24,11 @@ namespace PaymentGateway.Application.WriteOperations
         private readonly AccountOptions _accountOptions;
         private readonly Database _database;
         //private readonly NewIban _ibanService;~~~~~~~~~~make Iban Read
-        public CreateAccount(IEventSender eventSender, AccountOptions accountOptions)
+        public CreateAccount(IEventSender eventSender, AccountOptions accountOptions, Database database)
         {
             _eventSender = eventSender;
             _accountOptions = accountOptions;
+            _database = database;
         }
         public void PerformOperation(CreateAccountCommand operation, Database database)
         {

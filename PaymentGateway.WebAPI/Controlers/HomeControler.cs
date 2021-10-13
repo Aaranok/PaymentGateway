@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PaymentGateway.WebAPI.Controlers
+namespace PaymentGateway.WebAPI.Controllers
 {
-    //http://localhost:5000/api/Home/GetHello
+    //http://localhost:5000/api/HomeController/GetHello
     [Route("api/[controller]")]
     [ApiController]
-    public class HomeControler : ControllerBase
+    public class HomeController : ControllerBase
     {
         [HttpGet]
         [Route("GetHello")]

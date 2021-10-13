@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NrPrVIMl7ofA90S5oyWh03JtFKM6R7hs+SWovE17uRW1qYUK1a0QVxC4fcR7WdZAOB8wdVA6IQXib4chfR46Eg==",
+  "dgSpecHash": "l/Acue7HzLUVB9QkLR6pYOg8H3Rrwep44Ty6YouUd7PM0llD0HBYP/MocoNU56EuR/q8Xsk4kjXxQ2zI8SIZ6w==",
   "success": true,
-  "projectFilePath": "D:\\Work\\GIT\\PaymentGateway\\test\\test.csproj",
+  "projectFilePath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\test\\test.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

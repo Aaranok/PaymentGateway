@@ -3493,20 +3493,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vladi\\.nuget\\packages\\": {}
+    "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Work\\GIT\\PaymentGateway\\PaymentGateway\\PaymentGateway.csproj",
+      "projectUniqueName": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway\\PaymentGateway.csproj",
       "projectName": "PaymentGateway",
-      "projectPath": "D:\\Work\\GIT\\PaymentGateway\\PaymentGateway\\PaymentGateway.csproj",
-      "packagesPath": "C:\\Users\\vladi\\.nuget\\packages\\",
-      "outputPath": "D:\\Work\\GIT\\PaymentGateway\\PaymentGateway\\obj\\",
+      "projectPath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway\\PaymentGateway.csproj",
+      "packagesPath": "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "D:\\Work\\GIT\\PaymentGateway\\NuGet.Config",
-        "C:\\Users\\vladi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\NuGet.Config",
+        "C:\\Users\\vlad.iacobescu\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3520,23 +3520,23 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Work\\GIT\\PaymentGateway\\PaymentGateway.Abstractions\\PaymentGateway.Abstractions.csproj": {
-              "projectPath": "D:\\Work\\GIT\\PaymentGateway\\PaymentGateway.Abstractions\\PaymentGateway.Abstractions.csproj"
+            "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Abstractions\\PaymentGateway.Abstractions.csproj": {
+              "projectPath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Abstractions\\PaymentGateway.Abstractions.csproj"
             },
-            "D:\\Work\\GIT\\PaymentGateway\\PaymentGateway.Application\\PaymentGateway.Application.csproj": {
-              "projectPath": "D:\\Work\\GIT\\PaymentGateway\\PaymentGateway.Application\\PaymentGateway.Application.csproj"
+            "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Application\\PaymentGateway.Application.csproj": {
+              "projectPath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Application\\PaymentGateway.Application.csproj"
             },
-            "D:\\Work\\GIT\\PaymentGateway\\PaymentGateway.Data\\PaymentGateway.Data.csproj": {
-              "projectPath": "D:\\Work\\GIT\\PaymentGateway\\PaymentGateway.Data\\PaymentGateway.Data.csproj"
+            "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Data\\PaymentGateway.Data.csproj": {
+              "projectPath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Data\\PaymentGateway.Data.csproj"
             },
-            "D:\\Work\\GIT\\PaymentGateway\\PaymentGateway.ExternalService\\PaymentGateway.ExternalService.csproj": {
-              "projectPath": "D:\\Work\\GIT\\PaymentGateway\\PaymentGateway.ExternalService\\PaymentGateway.ExternalService.csproj"
+            "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.ExternalService\\PaymentGateway.ExternalService.csproj": {
+              "projectPath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.ExternalService\\PaymentGateway.ExternalService.csproj"
             },
-            "D:\\Work\\GIT\\PaymentGateway\\PaymentGateway.Models\\PaymentGateway.Models.csproj": {
-              "projectPath": "D:\\Work\\GIT\\PaymentGateway\\PaymentGateway.Models\\PaymentGateway.Models.csproj"
+            "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Models\\PaymentGateway.Models.csproj": {
+              "projectPath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Models\\PaymentGateway.Models.csproj"
             },
-            "D:\\Work\\GIT\\PaymentGateway\\PymentGateway.PublishedLanguage\\PaymentGateway.PublishedLanguage.csproj": {
-              "projectPath": "D:\\Work\\GIT\\PaymentGateway\\PymentGateway.PublishedLanguage\\PaymentGateway.PublishedLanguage.csproj"
+            "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PymentGateway.PublishedLanguage\\PaymentGateway.PublishedLanguage.csproj": {
+              "projectPath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PymentGateway.PublishedLanguage\\PaymentGateway.PublishedLanguage.csproj"
             }
           }
         }
@@ -3595,7 +3595,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
