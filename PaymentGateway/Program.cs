@@ -124,6 +124,15 @@ namespace PaymentGateway
 
             PurchaseService purchaseServiceEvent = serviceProvider.GetRequiredService<PurchaseService>();
             purchaseServiceEvent.PerformOperation(purchaseService);
+
+            var query = new Application.ReadOperations.ListOfAccounts.Query
+            {
+                PersonId = 1
+            };
+
+            var handler = serviceProvider.GetRequiredService<ListOfAccounts.QueryHandler>();
+            var result = handler.PerformOperation(query);
+
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             //~~~~~~~~~~~~~~~~~~~~~         ZA OLD TINGS            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

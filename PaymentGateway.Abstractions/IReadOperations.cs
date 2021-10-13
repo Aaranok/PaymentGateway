@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace PaymentGateway.Abstractions
 {
-    public class IReadOperations<T>
+    public interface IReadOperation<TInput, TResult>
     {
-        public void PerformOperation(T operation)
-        {}
+        TResult PerformOperation(TInput query);
     }
 }

@@ -92,4 +92,3 @@ D:\Work\GIT\PaymentGateway\PaymentGateway\obj\Debug\net5.0\PaymentGateway.dll
 D:\Work\GIT\PaymentGateway\PaymentGateway\obj\Debug\net5.0\ref\PaymentGateway.dll
 D:\Work\GIT\PaymentGateway\PaymentGateway\obj\Debug\net5.0\PaymentGateway.pdb
 D:\Work\GIT\PaymentGateway\PaymentGateway\obj\Debug\net5.0\PaymentGateway.genruntimeconfig.cache
-C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway\obj\Debug\net5.0\PaymentGateway.csproj.CopyComplete

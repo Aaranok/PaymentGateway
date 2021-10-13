@@ -14,7 +14,6 @@ C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.Abstractions\
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.Abstractions\bin\Debug\net5.0\PaymentGateway.Models.dll
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.Abstractions\bin\Debug\net5.0\PaymentGateway.Data.pdb
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.Abstractions\bin\Debug\net5.0\PaymentGateway.Models.pdb
-C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.Abstractions\obj\Debug\net5.0\PaymentGateway.Abstractions.csproj.CopyComplete
 D:\Work\GIT\PaymentGateway\PaymentGateway.Abstractions\obj\Debug\net5.0\PaymentGateway.Abstractions.csproj.AssemblyReference.cache
 D:\Work\GIT\PaymentGateway\PaymentGateway.Abstractions\obj\Debug\net5.0\PaymentGateway.Abstractions.GeneratedMSBuildEditorConfig.editorconfig
 D:\Work\GIT\PaymentGateway\PaymentGateway.Abstractions\obj\Debug\net5.0\PaymentGateway.Abstractions.AssemblyInfoInputs.cache
@@ -32,3 +31,4 @@ D:\Work\GIT\PaymentGateway\PaymentGateway.Abstractions\bin\Debug\net5.0\PaymentG
 D:\Work\GIT\PaymentGateway\PaymentGateway.Abstractions\bin\Debug\net5.0\PaymentGateway.Data.pdb
 D:\Work\GIT\PaymentGateway\PaymentGateway.Abstractions\bin\Debug\net5.0\PaymentGateway.Models.pdb
 D:\Work\GIT\PaymentGateway\PaymentGateway.Abstractions\obj\Debug\net5.0\PaymentGateway.Abstractions.csproj.CopyComplete
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.Abstractions\obj\Debug\net5.0\PaymentGateway.Abstractions.csproj.CopyComplete

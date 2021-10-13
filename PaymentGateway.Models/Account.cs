@@ -11,8 +11,9 @@ namespace PaymentGateway.Models
         public string Status { get; set; }
         public double Limit { get; set; }
         public int AccountID { get; set; }
+        public int PersonID { get; set; }
 
-        public Account(double balance, string currency, string IbanCode, string type, string status, double limit, int id)
+        public Account(double balance, string currency, string IbanCode, string type, string status, double limit, int id, int persId)
         {
             this.Balance = balance;
             this.Currency = currency;
@@ -21,6 +22,7 @@ namespace PaymentGateway.Models
             this.Status = status;
             this.Type = type;
             this.AccountID = id;
+            this.PersonID = persId;
         }
         public Account()
         {

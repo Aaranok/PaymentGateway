@@ -54,7 +54,8 @@ namespace PaymentGateway.Application.WriteOperations
             Person person = new Person();
             person.Cnp = operation.Cnp;
             person.Name = operation.Name;
-
+            person.PersonID = _database.Persons.Count + 1;
+            //person.PersonID = 1;
             if (operation.ClientType == "Company")
                 person.Type = (int)PersonType.Company;
             else if (operation.ClientType == "Individual")
@@ -70,6 +71,7 @@ namespace PaymentGateway.Application.WriteOperations
             account.Currency = operation.Currency;
             account.Balance = 0;
             account.IbanCode = random.Next(1000000).ToString();
+            account.PersonID = person.PersonID;
             _database.Accounts.Add(account);
 
             _database.SaveChange();
