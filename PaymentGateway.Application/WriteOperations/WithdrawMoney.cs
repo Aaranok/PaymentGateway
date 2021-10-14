@@ -37,19 +37,17 @@ namespace PaymentGateway.Application.WriteOperations
                 throw new Exception("Not enough funds");
             }
 
-            Transaction transaction = new Transaction();
-            transaction.Amount = -request.Amount;
-            transaction.Currency = request.Currency;
-            transaction.DateOfTransaction = request.DateOfTransaction;
+            Transaction transaction = new()
+            {
+                Amount = -request.Amount,
+                Currency = request.Currency,
+                Type = "Withdraw",
+                DateOfTransaction = request.DateOfTransaction
+            };
             transaction.DateOfOperation = transaction.GetOpDate();
-            transaction.Type = "Withdraw";
-
-            //TransactionCreated eventTransCreated = new(request.DateOfTransaction, transaction.Type, request.Currency, request.Amount, request.Iban);
-            //_eventSender.SendEvent(eventTransCreated);
 
             account.Balance -= transaction.Amount;
             WithdrawDone eventWitDone = new(request.Iban, request.Currency, request.Amount, request.DateOfOperation);
-            //_eventSender.SendEvent(eventWitDone);
             _database.SaveChange();
             return Unit.Task;
         }

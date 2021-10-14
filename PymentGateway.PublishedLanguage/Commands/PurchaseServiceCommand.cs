@@ -12,11 +12,9 @@ namespace PaymentGateway.PublishedLanguage.Commands
     {
         public string Iban { get; set; }
         public string Cnp { get; set; }
-        public string personName { get; set; }
-        //public string ServiceName { get; set; }
+        public string PersonName { get; set; }
         public DateTime DateOfTransaction { get; set; }
-        //public int ServiceId { get; set; }
-        public List<ServiceList> Product = new List<ServiceList>();
+        public List<ServiceList> Product = new();
 
     }
 }

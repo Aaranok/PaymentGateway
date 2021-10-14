@@ -32,10 +32,12 @@ namespace PaymentGateway.Application.WriteOperations
                 throw new Exception("Account not found");
             }
 
-            Transaction transaction = new Transaction();
-            transaction.Amount = request.Amount;
-            transaction.Currency = request.Currency;
-            transaction.DateOfTransaction = request.DateOfTransaction;
+            Transaction transaction = new()
+            {
+                Amount = request.Amount,
+                Currency = request.Currency,
+                DateOfTransaction = request.DateOfTransaction
+            };
             transaction.DateOfOperation = transaction.GetOpDate();
             transaction.Type = "Deposit";
 

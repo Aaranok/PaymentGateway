@@ -21,7 +21,7 @@ namespace PaymentGateway.Application.WriteOperations
 
         public async Task<Unit> Handle(CreateServiceCommand request, CancellationToken cancellationToken)
         {
-            Service service = new Service
+            Service service = new()
             {
                 Value = request.Value,
                 Name = request.Name,

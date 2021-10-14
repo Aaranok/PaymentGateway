@@ -27,7 +27,6 @@ namespace PaymentGateway.Application.WriteOperations
 
         public Task<Unit> Handle(PurchaseServiceCommand request, CancellationToken cancellationToken)
         {
-            var random = new Random();
             var accountIdent = new AccountIbanOperations(_database);
             var account = accountIdent.GetAccountByIban(request.Iban);
 
@@ -39,7 +38,8 @@ namespace PaymentGateway.Application.WriteOperations
             string currency = "";
             foreach (var item in request.Product)
             {
-                var service = _database.GetServiceFromId(item.IdService);
+                var service = _database.Services.FirstOrDefault(service => service.Id == item.IdService);
+
                 if (service == null)
                 {
                     throw new Exception("Service not found");
@@ -59,15 +59,16 @@ namespace PaymentGateway.Application.WriteOperations
                 throw new Exception("Not enough capital");
             }
 
-            Transaction transaction = new Transaction();
-
-            transaction.Amount = totalValue;
-            transaction.Currency = currency;
-            transaction.DateOfTransaction = request.DateOfTransaction;
+            Transaction transaction = new()
+            {
+                Amount = totalValue,
+                Currency = currency,
+                DateOfTransaction = request.DateOfTransaction,
+                Value = totalValue,
+                Type = "Purchase"
+        };
             transaction.DateOfOperation = transaction.GetOpDate();
-            transaction.Type = "Purchase";
             transaction.Id = _database.Transactions.Count() + 1;
-            transaction.Value = totalValue;
 
             _database.Transactions.Add(transaction);
 
@@ -75,16 +76,17 @@ namespace PaymentGateway.Application.WriteOperations
 
             foreach (var item in request.Product)
             {
-                ServiceXTransaction servXTransItem = new ServiceXTransaction();
-                servXTransItem.IdTransaction = transaction.Id;
+                ServiceXTransaction servXTransItem = new()
+                {
+                    IdTransaction = transaction.Id
+                };
                 servXTransItem.ServiceIdList.IdService = item.IdService;
                 servXTransItem.ServiceIdList.NoPurchased = item.NoPurchased;
                 _database.ServXTrans.Add(servXTransItem);
             }
 
             _database.SaveChange();
-            ServicePurchased eventServPurchased = new(request.Iban, request.Cnp, request.personName, request.Product);
-            //await _mediator.Publish(eventServPurchased, cancellationToken);
+            ServicePurchased eventServPurchased = new(request.Iban, request.Cnp, request.PersonName, request.Product);
             return Unit.Task;
 
         }

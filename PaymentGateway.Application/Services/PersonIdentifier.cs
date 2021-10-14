@@ -19,12 +19,6 @@ namespace PaymentGateway.Application.ReadOperations
         {
 
             return _database.Persons.FirstOrDefault(person => person.Cnp == cnp);
-            /*foreach (var item in _database.Persons)
-            {
-                if (item.Cnp == cnp)
-                    return item;
-            }
-            return null;*/
         }
     }
 }

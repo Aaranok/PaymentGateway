@@ -13,7 +13,7 @@ namespace PaymentGateway.PublishedLanguage.Events
         public string Iban { get; set; }
         public string Cnp { get; set; }
         public string PersonName { get; set; }
-        public List<ServiceList> ServiceIdList = new List<ServiceList>();
+        public List<ServiceList> ServiceIdList = new();
 
 
         public ServicePurchased(string iban, string cnp, string personName, List<ServiceList> serviceIdList){

@@ -21,10 +21,12 @@ namespace PaymentGateway.Application.WriteOperations
         public async Task<Unit> Handle(EnrollCustomerCommand request, CancellationToken cancellationToken)
         {
             var random = new Random();
-            Person person = new Person();
-            person.Cnp = request.Cnp;
-            person.Name = request.Name;
-            person.PersonID = _database.Persons.Count + 1;
+            Person person = new()
+            {
+                Cnp = request.Cnp,
+                Name = request.Name,
+                PersonID = _database.Persons.Count + 1
+            };
             if (request.ClientType == "Company")
                 person.Type = (int)PersonType.Company;
             else if (request.ClientType == "Individual")
@@ -35,12 +37,14 @@ namespace PaymentGateway.Application.WriteOperations
 
             _database.Persons.Add(person);
 
-            Account account = new Account();
-            account.Type = request.AccountType;
-            account.Currency = request.Currency;
-            account.Balance = 0;
-            account.IbanCode = random.Next(1000000).ToString();
-            account.PersonID = person.PersonID;
+            Account account = new()
+            {
+                Type = request.AccountType,
+                Currency = request.Currency,
+                Balance = 0,
+                IbanCode = random.Next(1000000).ToString(),
+                PersonID = person.PersonID
+            };
             _database.Accounts.Add(account);
 
             _database.SaveChange();
