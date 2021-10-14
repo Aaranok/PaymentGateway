@@ -5,9 +5,7 @@ using PaymentGateway.Models;
 using PaymentGateway.PublishedLanguage.Events;
 using PaymentGateway.PublishedLanguage.Commands;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -25,7 +23,7 @@ namespace PaymentGateway.Application.WriteOperations
             _database = database;
         }
 
-        public Task<Unit> Handle(PurchaseServiceCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(PurchaseServiceCommand request, CancellationToken cancellationToken)
         {
             var accountIdent = new AccountIbanOperations(_database);
             var account = _database.Accounts.FirstOrDefault(account=> account.IbanCode == request.Iban);
@@ -88,7 +86,8 @@ namespace PaymentGateway.Application.WriteOperations
 
             _database.SaveChange();
             ServicePurchased eventServPurchased = new(request.Iban, request.Cnp, request.PersonName, request.Product);
-            return Unit.Task;
+            await _mediator.Publish(eventServPurchased, cancellationToken);
+            return Unit.Value;
 
         }
     }

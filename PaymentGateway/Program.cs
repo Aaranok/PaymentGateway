@@ -87,8 +87,6 @@ namespace PaymentGateway
 
             await mediator.Send(depMoney, cancellationToken);
 
-
-
             WithdrawMoneyCommand witMoneyCmd = new()
             {
                 Amount = 100,
@@ -100,7 +98,6 @@ namespace PaymentGateway
 
             await mediator.Send(witMoneyCmd, cancellationToken);
 
-
             CreateServiceCommand createServCmd = new()
             {
                 Limit = 50,
@@ -110,7 +107,6 @@ namespace PaymentGateway
             };
 
             await mediator.Send(createServCmd, cancellationToken);
-
 
             CreateServiceCommand createServCmd2 = new()
             {
@@ -143,7 +139,6 @@ namespace PaymentGateway
             purchaseService.Product.Add(listItem);
 
             await mediator.Send(purchaseService, cancellationToken);
-
 
             var query = new Application.ReadOperations.ListOfAccounts.Query
             {
