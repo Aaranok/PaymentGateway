@@ -4,19 +4,23 @@ using PaymentGateway.ExternalService;
 using PaymentGateway.Models;
 using PaymentGateway.PublishedLanguage.Commands;
 using System;
+using MediatR;
 using static PaymentGateway.Models.ServiceXTransaction;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PaymentGateway.Application;
 using System.IO;
 using PaymentGateway.Application.ReadOperations;
+using System.Threading.Tasks;
+using System.Threading;
+using System.Linq;
 
 namespace PaymentGateway
 {
     class Program
     {
         static IConfiguration Configuration;
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
 
             Configuration = new ConfigurationBuilder()
@@ -27,6 +31,11 @@ namespace PaymentGateway
                 .Build();
 
             var services = new ServiceCollection();
+            var source = new CancellationTokenSource();
+            var cancellationToken = source.Token;
+
+            services.AddMediatR(typeof(ListOfAccounts).Assembly, typeof(AllEventsHandler).Assembly);
+
             services.RegisterBusinessServices(Configuration);
 
             services.AddSingleton(Configuration);
@@ -34,6 +43,8 @@ namespace PaymentGateway
             var serviceProvider = services.BuildServiceProvider();
 
             var DB = serviceProvider.GetRequiredService<Database>();
+
+            var mediator = serviceProvider.GetRequiredService<IMediator>();
 
             EnrollCustomerCommand customer1 = new()
             {
@@ -44,8 +55,10 @@ namespace PaymentGateway
                 AccountType = "Credit"
             };
 
-            var enrollOp1 = serviceProvider.GetRequiredService<EnrollCustomerOperation>();
-            enrollOp1.Handle(customer1, default).GetAwaiter().GetResult();
+            //var enrollOp1 = serviceProvider.GetRequiredService<EnrollCustomerOperation>();
+            //enrollOp1.Handle(customer1, default).GetAwaiter().GetResult();
+            await mediator.Send(customer1, cancellationToken);
+
 
             CreateAccountCommand account1 = new()
             {
@@ -56,8 +69,10 @@ namespace PaymentGateway
                 Name = "Gigi"
             };
 
-            var createAccount1 = serviceProvider.GetRequiredService<CreateAccount>();
-            createAccount1.Handle(account1, default).GetAwaiter().GetResult();
+            //var createAccount1 = serviceProvider.GetRequiredService<CreateAccount>();
+            //createAccount1.Handle(account1, default).GetAwaiter().GetResult();
+            await mediator.Send(account1, cancellationToken);
+
 
 
             DepositMoneyCommand depMoney = new()
@@ -70,8 +85,10 @@ namespace PaymentGateway
             AccountIbanOperations getIbanOp = new(DB);
             depMoney.Iban = getIbanOp.GetIbanByCnp(account1.Cnp);
 
-            DepositMoney depMoneyEvent1 = serviceProvider.GetRequiredService<DepositMoney>();
-            depMoneyEvent1.Handle(depMoney, default).GetAwaiter().GetResult();
+            //DepositMoney depMoneyEvent1 = serviceProvider.GetRequiredService<DepositMoney>();
+            //depMoneyEvent1.Handle(depMoney, default).GetAwaiter().GetResult();
+            await mediator.Send(depMoney, cancellationToken);
+
 
 
             WithdrawMoneyCommand witMoneyCmd = new()
@@ -83,8 +100,9 @@ namespace PaymentGateway
                 Iban = getIbanOp.GetIbanByCnp(account1.Cnp)
             };
 
-            WithdrawMoney withdrawMoneyEvent = serviceProvider.GetRequiredService<WithdrawMoney>();
-            withdrawMoneyEvent.Handle(witMoneyCmd, default).GetAwaiter().GetResult();
+            //WithdrawMoney withdrawMoneyEvent = serviceProvider.GetRequiredService<WithdrawMoney>();
+            //withdrawMoneyEvent.Handle(witMoneyCmd, default).GetAwaiter().GetResult();
+            await mediator.Send(witMoneyCmd, cancellationToken);
 
 
             CreateServiceCommand createServCmd = new()
@@ -95,8 +113,9 @@ namespace PaymentGateway
                 Currency = "$"
             };
 
-            CreateService createServiceEvent = serviceProvider.GetRequiredService<CreateService>();
-            createServiceEvent.Handle(createServCmd, default).GetAwaiter().GetResult();
+            //CreateService createServiceEvent = serviceProvider.GetRequiredService<CreateService>();
+            //createServiceEvent.Handle(createServCmd, default).GetAwaiter().GetResult();
+            await mediator.Send(createServCmd, cancellationToken);
 
 
             CreateServiceCommand createServCmd2 = new()
@@ -107,8 +126,9 @@ namespace PaymentGateway
                 Currency = "$"
             };
 
-            CreateService createServiceEvent2 = serviceProvider.GetRequiredService<CreateService>();
-            createServiceEvent2.Handle(createServCmd2, default).GetAwaiter().GetResult();
+            //CreateService createServiceEvent2 = serviceProvider.GetRequiredService<CreateService>();
+            //createServiceEvent2.Handle(createServCmd2, default).GetAwaiter().GetResult();
+            await mediator.Send(createServCmd2, cancellationToken);
 
             PurchaseServiceCommand purchaseService = new()
             {
@@ -120,17 +140,22 @@ namespace PaymentGateway
             ServiceList listItem;
             Service aux = new();
             ServiceReadOperations servRead = new();
-            aux = servRead.GetServiceByName("Schema");
+            //aux = servRead.GetServiceByName("Schema");
+            aux = DB.Services.FirstOrDefault(service => service.Name == "Schema");
+
             listItem.IdService = aux.Id;
             listItem.NoPurchased = 2;
             purchaseService.Product.Add(listItem);
-            aux = servRead.GetServiceByName("Schema2");
+            //aux = servRead.GetServiceByName("Schema2");
+            aux = DB.Services.FirstOrDefault(service => service.Name == "Schema2");
+
             listItem.IdService = aux.Id;
             listItem.NoPurchased = 2;
             purchaseService.Product.Add(listItem);
 
-            PurchaseService purchaseServiceEvent = serviceProvider.GetRequiredService<PurchaseService>();
-            purchaseServiceEvent.Handle(purchaseService, default).GetAwaiter().GetResult();
+            //PurchaseService purchaseServiceEvent = serviceProvider.GetRequiredService<PurchaseService>();
+            //purchaseServiceEvent.Handle(purchaseService, default).GetAwaiter().GetResult();
+            await mediator.Send(purchaseService, cancellationToken);
 
 
             var query = new Application.ReadOperations.ListOfAccounts.Query
@@ -138,8 +163,9 @@ namespace PaymentGateway
                 PersonId = 1
             };
 
-            var handler = serviceProvider.GetRequiredService<ListOfAccounts.QueryHandler>();
-            var result = handler.Handle(query, default).GetAwaiter().GetResult();
+            //var handler = serviceProvider.GetRequiredService<ListOfAccounts.QueryHandler>();
+            //var result = handler.Handle(query, default).GetAwaiter().GetResult();
+            var result = await mediator.Send(query, cancellationToken);
 
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             //~~~~~~~~~~~~~~~~~~~~~         ZA OLD TINGS            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

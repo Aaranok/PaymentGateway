@@ -387,6 +387,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.1.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "Serilog.AspNetCore": {
               "target": "Package",
               "version": "[3.4.0, )"
@@ -486,6 +494,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
               "version": "[5.0.0, )"

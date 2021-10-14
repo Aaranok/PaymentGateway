@@ -166,4 +166,6 @@ D:\Work\GIT\PaymentGateway\PaymentGateway.WebAPI\obj\Debug\net5.0\PaymentGateway
 D:\Work\GIT\PaymentGateway\PaymentGateway.WebAPI\obj\Debug\net5.0\PaymentGateway.WebAPI.csproj.CopyComplete
 D:\Work\GIT\PaymentGateway\PaymentGateway.WebAPI\obj\Debug\net5.0\PaymentGateway.WebAPI.genruntimeconfig.cache
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.WebAPI\bin\Debug\net5.0\MediatR.dll
-C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.WebAPI\obj\Debug\net5.0\PaymentGateway.WebAPI.csproj.CopyComplete
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.WebAPI\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.WebAPI\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.WebAPI\bin\Debug\net5.0\MediatR.Extensions.Microsoft.DependencyInjection.dll

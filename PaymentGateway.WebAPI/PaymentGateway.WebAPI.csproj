@@ -10,7 +10,8 @@
 		<PackageReference Include="Serilog.Sinks.Console" Version="$(SerilogSinksConsolePackageVersion)" />
 		<PackageReference Include="Serilog.Sinks.MSSqlServer" Version="$(SerilogSinksMSSqlServerPackageVersion)" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="$(SwashbuckleAspNetCore)" />
-
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="$(AutoMapperExtensionsPackageVersion)" />
+		<PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="$(MediatRPackageVersion)" />
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\PaymentGateway.Abstractions\PaymentGateway.Abstractions.csproj" />
@@ -21,6 +22,7 @@
 	  <ProjectReference Include="..\PaymentGateway\PaymentGateway.csproj" />
 	  <ProjectReference Include="..\PymentGateway.PublishedLanguage\PaymentGateway.PublishedLanguage.csproj" />
 	</ItemGroup>
+	
 	<ItemGroup>
 		<Content Update="appsettings.json">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
