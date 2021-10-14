@@ -28,7 +28,8 @@ namespace PaymentGateway.Application.WriteOperations
         public Task<Unit> Handle(PurchaseServiceCommand request, CancellationToken cancellationToken)
         {
             var accountIdent = new AccountIbanOperations(_database);
-            var account = accountIdent.GetAccountByIban(request.Iban);
+            var account = _database.Accounts.FirstOrDefault(account=> account.IbanCode == request.Iban);
+
 
             if (account == null)
             {

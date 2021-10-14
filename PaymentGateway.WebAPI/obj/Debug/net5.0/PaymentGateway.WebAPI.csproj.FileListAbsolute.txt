@@ -169,3 +169,4 @@ C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.WebAPI\bin\De
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.WebAPI\bin\Debug\net5.0\AutoMapper.dll
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.WebAPI\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.WebAPI\bin\Debug\net5.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.WebAPI\obj\Debug\net5.0\PaymentGateway.WebAPI.csproj.CopyComplete

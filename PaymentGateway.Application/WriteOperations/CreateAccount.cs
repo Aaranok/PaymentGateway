@@ -26,7 +26,6 @@ namespace PaymentGateway.Application.WriteOperations
         
         public async Task<Unit> Handle(CreateAccountCommand request, CancellationToken cancellationToken)
         {
-            var persIdent = new PersonIdentifier(_database);
             var person = _database.Persons.FirstOrDefault(e => e.Cnp == request.Cnp);
 
             if (person == null)

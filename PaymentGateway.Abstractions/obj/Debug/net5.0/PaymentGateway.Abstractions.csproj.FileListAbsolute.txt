@@ -31,4 +31,3 @@ D:\Work\GIT\PaymentGateway\PaymentGateway.Abstractions\bin\Debug\net5.0\PaymentG
 D:\Work\GIT\PaymentGateway\PaymentGateway.Abstractions\bin\Debug\net5.0\PaymentGateway.Data.pdb
 D:\Work\GIT\PaymentGateway\PaymentGateway.Abstractions\bin\Debug\net5.0\PaymentGateway.Models.pdb
 D:\Work\GIT\PaymentGateway\PaymentGateway.Abstractions\obj\Debug\net5.0\PaymentGateway.Abstractions.csproj.CopyComplete
-C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.Abstractions\obj\Debug\net5.0\PaymentGateway.Abstractions.csproj.CopyComplete
