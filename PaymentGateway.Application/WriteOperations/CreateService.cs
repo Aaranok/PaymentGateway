@@ -1,55 +1,41 @@
-﻿using PaymentGateway.Abstractions;
-using PaymentGateway.Data;
+﻿using PaymentGateway.Data;
 using PaymentGateway.Models;
 using PaymentGateway.PublishedLanguage.Events;
-using PaymentGateway.PublishedLanguage.WriteSide;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using PaymentGateway.PublishedLanguage.Commands;
 using System.Threading.Tasks;
+using MediatR;
+using System.Threading;
 
 namespace PaymentGateway.Application.WriteOperations
 {
-    public class CreateService : IWriteOperations<CreateServiceCommand>
+    public class CreateService : IRequestHandler<CreateServiceCommand>
     {
-        private readonly IEventSender _eventSender;
         private readonly Database _database;
+        private readonly IMediator _mediator;
 
-        public CreateService(IEventSender eventSender, Database database)
+        public CreateService(IMediator mediator, Database database)
         {
-            _eventSender = eventSender;
+            _mediator = mediator;
             _database = database;
         }
-        public void PerformOperation(CreateServiceCommand operation, Database database)
-        {
-            Service service = new Service();
 
-            service.Value = operation.Value;
-            service.Name = operation.Name;
-            service.Limit = operation.Limit;
-            service.Currency = operation.Currency;
-
-            database.Services.Add(service);
-            database.SaveChange();
-            ServiceCreated eventServCreated = new(operation.Name, operation.Value, operation.Limit, operation.Currency);
-            _eventSender.SendEvent(eventServCreated);
-        }
-
-        public void PerformOperation(CreateServiceCommand operation)
+        public async Task<Unit> Handle(CreateServiceCommand request, CancellationToken cancellationToken)
         {
             Service service = new Service
             {
-                Value = operation.Value,
-                Name = operation.Name,
-                Limit = operation.Limit,
-                Currency = operation.Currency
+                Value = request.Value,
+                Name = request.Name,
+                Limit = request.Limit,
+                Currency = request.Currency
             };
 
             _database.Services.Add(service);
             _database.SaveChange();
-            ServiceCreated eventServCreated = new(operation.Name, operation.Value, operation.Limit, operation.Currency);
-            _eventSender.SendEvent(eventServCreated);
+            ServiceCreated eventServCreated = new(request.Name, request.Value, request.Limit, request.Currency);
+            await _mediator.Publish(eventServCreated, cancellationToken);
+
+            return Unit.Value;
+
         }
     }
 }

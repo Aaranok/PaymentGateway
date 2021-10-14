@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MediatR;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PaymentGateway.PublishedLanguage.Events
 {
-    public class ServiceCreated
+    public class ServiceCreated: INotification
     {
         public string Name { get; set; }
         public double Value { get; set; }

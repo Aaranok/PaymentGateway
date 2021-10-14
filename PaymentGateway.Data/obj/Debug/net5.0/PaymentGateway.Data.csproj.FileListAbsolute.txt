@@ -12,7 +12,6 @@ C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.Data\obj\Debu
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.Data\obj\Debug\net5.0\PaymentGateway.Data.dll
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.Data\obj\Debug\net5.0\ref\PaymentGateway.Data.dll
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.Data\obj\Debug\net5.0\PaymentGateway.Data.pdb
-C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.Data\obj\Debug\net5.0\PaymentGateway.Data.csproj.CopyComplete
 D:\Work\GIT\PaymentGateway\PaymentGateway.Data\bin\Debug\net5.0\PaymentGateway.Data.deps.json
 D:\Work\GIT\PaymentGateway\PaymentGateway.Data\bin\Debug\net5.0\PaymentGateway.Data.dll
 D:\Work\GIT\PaymentGateway\PaymentGateway.Data\bin\Debug\net5.0\ref\PaymentGateway.Data.dll

@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "iIDjJAHKytxi1ET+u8JmS3VAgv1IuHzCtGR+FDOSRxciDIY80RYqldRqp5SjaUlqXua6nZlwH19m5PD6e/ka/g==",
+  "dgSpecHash": "TpUl94XiTd3c9996hZEEnmedfdzdf4i/cAs+ELAqY4Re1XIBKsgYUffhtQ0g7efqWsHhdD8R3OZ/uuowj5Yrqg==",
   "success": true,
   "projectFilePath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.ExternalService\\PaymentGateway.ExternalService.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

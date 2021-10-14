@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "V3c6xYvuELQQWcg6kKttGTEbmYGXx/iCDnKJvHv7jd2zuSmsQeX8cOdzQfKHI0eoV4z6JjWsXYT1oDAY+fUmVw==",
+  "dgSpecHash": "Ne0SVpHQRq6qk0TS2HGVmAVaNxxZmQJXSQOfzeegkNCzIvHl5lJEztM7mM4Hu15AzasOVux87i9ucaN1/i2xGQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.WebAPI\\PaymentGateway.WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\jetbrains.annotations\\11.1.0\\jetbrains.annotations.11.1.0.nupkg.sha512",
+    "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
     "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\microsoft.azure.services.appauthentication\\1.4.0\\microsoft.azure.services.appauthentication.1.4.0.nupkg.sha512",
     "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\microsoft.data.sqlclient\\1.1.3\\microsoft.data.sqlclient.1.1.3.nupkg.sha512",

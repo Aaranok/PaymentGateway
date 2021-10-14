@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MediatR;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PaymentGateway.PublishedLanguage.Events
 {
-    public class DepositDone
+    public class DepositDone: INotification
     {
         public string Iban;
         public string Currency;

@@ -113,6 +113,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
               "version": "[5.0.0, )"
@@ -200,7 +204,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -244,6 +248,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -259,7 +269,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -314,7 +324,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -418,7 +428,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -447,6 +457,15 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Abstractions\\PaymentGateway.Abstractions.csproj": {
+                "projectPath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Abstractions\\PaymentGateway.Abstractions.csproj"
+              },
+              "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Data\\PaymentGateway.Data.csproj": {
+                "projectPath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Data\\PaymentGateway.Data.csproj"
+              },
+              "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.ExternalService\\PaymentGateway.ExternalService.csproj": {
+                "projectPath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.ExternalService\\PaymentGateway.ExternalService.csproj"
+              },
               "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Models\\PaymentGateway.Models.csproj": {
                 "projectPath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Models\\PaymentGateway.Models.csproj"
               }
@@ -462,6 +481,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -477,7 +502,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

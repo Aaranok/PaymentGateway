@@ -5,7 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PaymentGateway.Abstractions\PaymentGateway.Abstractions.csproj" />
+    <ProjectReference Include="..\PaymentGateway.Data\PaymentGateway.Data.csproj" />
+    <ProjectReference Include="..\PaymentGateway.ExternalService\PaymentGateway.ExternalService.csproj" />
     <ProjectReference Include="..\PaymentGateway.Models\PaymentGateway.Models.csproj" />
   </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="MediatR" Version="$(MediatRPackageVersion)" />
+	</ItemGroup>
 
 </Project>

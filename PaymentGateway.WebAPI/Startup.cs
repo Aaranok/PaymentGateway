@@ -2,9 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using PaymentGateway.Abstractions;
 using PaymentGateway.Application;
-using PaymentGateway.ExternalService;
 using PaymentGateway.WebApi.Swagger;
 
 namespace PaymentGateway.WebAPI
@@ -24,7 +22,7 @@ namespace PaymentGateway.WebAPI
             services.AddControllers();
             services.AddMvc(o => o.EnableEndpointRouting = false);
 
-            services.AddSingleton<IEventSender, EventSender>();
+            //services.AddSingleton<IEventSender, EventSender>();
             /*services.AddTransient<CreateAccount>();
 
             //services.AddSingleton<AccountOptions>(new AccountOptions { InitialBalance = 200 });

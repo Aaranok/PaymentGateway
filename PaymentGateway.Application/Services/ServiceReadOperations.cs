@@ -15,13 +15,7 @@ namespace PaymentGateway.Application.ReadOperations
         public Service GetServiceByName(string name)
         {
             return _database.Services.FirstOrDefault(service => service.Name == name);
-            /*
-            foreach (var item in _database.Services)
-            {
-                if (item.Name == name)
-                    return item;
-            }
-            return null;*/
+
         } 
     }
 }

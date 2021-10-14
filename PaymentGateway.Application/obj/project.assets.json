@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "MediatR/9.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/MediatR.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/MediatR.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/5.0.0": {
         "type": "package",
         "dependencies": {
@@ -95,6 +104,20 @@
           "bin/placeholder/PaymentGateway.Data.dll": {}
         }
       },
+      "PaymentGateway.ExternalService/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "MediatR": "9.0.0",
+          "PaymentGateway.Abstractions": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PaymentGateway.ExternalService.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PaymentGateway.ExternalService.dll": {}
+        }
+      },
       "PaymentGateway.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -109,6 +132,10 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "MediatR": "9.0.0",
+          "PaymentGateway.Abstractions": "1.0.0",
+          "PaymentGateway.Data": "1.0.0",
+          "PaymentGateway.ExternalService": "1.0.0",
           "PaymentGateway.Models": "1.0.0"
         },
         "compile": {
@@ -121,6 +148,24 @@
     }
   },
   "libraries": {
+    "MediatR/9.0.0": {
+      "sha512": "8b3UYNxegHVYcJMG2zH8wn+YqxLvXG+eMfj0cMCq/jTW72p6O3PCKMkrIv0mqyxdW7bA4gblsocw7n+/9Akg5g==",
+      "type": "package",
+      "path": "mediatr/9.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "gradient_128x128.png",
+        "lib/net461/MediatR.dll",
+        "lib/net461/MediatR.xml",
+        "lib/netstandard2.0/MediatR.dll",
+        "lib/netstandard2.0/MediatR.xml",
+        "lib/netstandard2.1/MediatR.dll",
+        "lib/netstandard2.1/MediatR.xml",
+        "mediatr.9.0.0.nupkg.sha512",
+        "mediatr.nuspec"
+      ]
+    },
     "Microsoft.Extensions.Configuration/5.0.0": {
       "sha512": "LN322qEKHjuVEhhXueTUe7RNePooZmS8aGid5aK2woX3NPjSnONFyKUc6+JknOS6ce6h2tCLfKPTBXE3mN/6Ag==",
       "type": "package",
@@ -247,6 +292,11 @@
       "path": "../PaymentGateway.Data/PaymentGateway.Data.csproj",
       "msbuildProject": "../PaymentGateway.Data/PaymentGateway.Data.csproj"
     },
+    "PaymentGateway.ExternalService/1.0.0": {
+      "type": "project",
+      "path": "../PaymentGateway.ExternalService/PaymentGateway.ExternalService.csproj",
+      "msbuildProject": "../PaymentGateway.ExternalService/PaymentGateway.ExternalService.csproj"
+    },
     "PaymentGateway.Models/1.0.0": {
       "type": "project",
       "path": "../PaymentGateway.Models/PaymentGateway.Models.csproj",
@@ -260,6 +310,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "MediatR >= 9.0.0",
       "Microsoft.Extensions.Configuration >= 5.0.0",
       "Microsoft.Extensions.Configuration.Binder >= 5.0.0",
       "Microsoft.Extensions.DependencyInjection >= 3.1.2",
@@ -322,6 +373,10 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "MediatR": {
+            "target": "Package",
+            "version": "[9.0.0, )"
+          },
           "Microsoft.Extensions.Configuration": {
             "target": "Package",
             "version": "[5.0.0, )"

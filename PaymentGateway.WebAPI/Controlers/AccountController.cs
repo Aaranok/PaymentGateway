@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PaymentGateway.Application.ReadOperations;
 using PaymentGateway.Application.WriteOperations;
-using PaymentGateway.PublishedLanguage.WriteSide;
+using PaymentGateway.PublishedLanguage.Commands;
 using System.Collections.Generic;
 
 namespace PaymentGateway.WebApi.Controllers
@@ -22,14 +22,16 @@ namespace PaymentGateway.WebApi.Controllers
         [Route("Create")]
         public string CreateAccount(CreateAccountCommand command)
         {
-            _createAccountCommandHandler.PerformOperation(command);
+            _createAccountCommandHandler.Handle(command, default).GetAwaiter().GetResult();
+
             return "OK";
         }
         [HttpGet]
         [Route("ListOfAccounts")]
         public List<ListOfAccounts.Model> GetListOfAccounts([FromQuery] ListOfAccounts.Query query)
         {
-            var result = _queryHandler.PerformOperation(query);
+            var result = _queryHandler.Handle(query, default).GetAwaiter().GetResult();
+
             return result;
         }
     }

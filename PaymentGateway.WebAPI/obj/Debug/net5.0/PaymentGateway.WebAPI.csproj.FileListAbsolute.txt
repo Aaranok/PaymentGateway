@@ -165,3 +165,5 @@ D:\Work\GIT\PaymentGateway\PaymentGateway.WebAPI\obj\Debug\net5.0\scopedcss\bund
 D:\Work\GIT\PaymentGateway\PaymentGateway.WebAPI\obj\Debug\net5.0\PaymentGateway.WebAPI.RazorTargetAssemblyInfo.cache
 D:\Work\GIT\PaymentGateway\PaymentGateway.WebAPI\obj\Debug\net5.0\PaymentGateway.WebAPI.csproj.CopyComplete
 D:\Work\GIT\PaymentGateway\PaymentGateway.WebAPI\obj\Debug\net5.0\PaymentGateway.WebAPI.genruntimeconfig.cache
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.WebAPI\bin\Debug\net5.0\MediatR.dll
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.WebAPI\obj\Debug\net5.0\PaymentGateway.WebAPI.csproj.CopyComplete

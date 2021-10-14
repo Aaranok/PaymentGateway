@@ -1,13 +1,14 @@
-﻿using System;
+﻿using MediatR;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static PaymentGateway.Models.ServiceXTransaction;
 
-namespace PaymentGateway.PublishedLanguage.WriteSide
+namespace PaymentGateway.PublishedLanguage.Commands
 {
-    public class PurchaseServiceCommand
+    public class PurchaseServiceCommand: IRequest
     {
         public string Iban { get; set; }
         public string Cnp { get; set; }

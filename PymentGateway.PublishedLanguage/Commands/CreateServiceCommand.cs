@@ -1,12 +1,13 @@
-﻿using System;
+﻿using MediatR;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PaymentGateway.PublishedLanguage.WriteSide
+namespace PaymentGateway.PublishedLanguage.Commands
 {
-    public class CreateServiceCommand
+    public class CreateServiceCommand:IRequest
     {
         public string Name { get; set; }
         public double Value { get; set; }

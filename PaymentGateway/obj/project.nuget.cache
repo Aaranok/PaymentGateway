@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "a+/ZvJubSAGtLDvzlCKlvOvwSA/prOQWTmu7l0rItz20Gcspft7KpB7IyzPiAmcBnfN0cKNXwDx6017low7ZRA==",
+  "dgSpecHash": "P9CVtRJdlOL+VmutJHZYW6kumlWjy2f4GUXwdCJW89qCbtPm4coo4A0Z2WZb9SBUtMN64kHhYZStCGoysvRigw==",
   "success": true,
   "projectFilePath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway\\PaymentGateway.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\jetbrains.annotations\\11.1.0\\jetbrains.annotations.11.1.0.nupkg.sha512",
+    "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
     "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\2.1.0\\microsoft.dotnet.platformabstractions.2.1.0.nupkg.sha512",
     "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\microsoft.extensions.configuration\\5.0.0\\microsoft.extensions.configuration.5.0.0.nupkg.sha512",

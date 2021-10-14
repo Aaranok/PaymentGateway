@@ -4,6 +4,189 @@
     "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PymentGateway.PublishedLanguage\\PaymentGateway.PublishedLanguage.csproj": {}
   },
   "projects": {
+    "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Abstractions\\PaymentGateway.Abstractions.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Abstractions\\PaymentGateway.Abstractions.csproj",
+        "projectName": "PaymentGateway.Abstractions",
+        "projectPath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Abstractions\\PaymentGateway.Abstractions.csproj",
+        "packagesPath": "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Abstractions\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\NuGet.Config",
+          "C:\\Users\\vlad.iacobescu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://incbnuget.appservice.online/nuget": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Data\\PaymentGateway.Data.csproj": {
+                "projectPath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Data\\PaymentGateway.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Data\\PaymentGateway.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Data\\PaymentGateway.Data.csproj",
+        "projectName": "PaymentGateway.Data",
+        "projectPath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Data\\PaymentGateway.Data.csproj",
+        "packagesPath": "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\NuGet.Config",
+          "C:\\Users\\vlad.iacobescu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://incbnuget.appservice.online/nuget": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Models\\PaymentGateway.Models.csproj": {
+                "projectPath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Models\\PaymentGateway.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.ExternalService\\PaymentGateway.ExternalService.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.ExternalService\\PaymentGateway.ExternalService.csproj",
+        "projectName": "PaymentGateway.ExternalService",
+        "projectPath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.ExternalService\\PaymentGateway.ExternalService.csproj",
+        "packagesPath": "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.ExternalService\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\NuGet.Config",
+          "C:\\Users\\vlad.iacobescu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://incbnuget.appservice.online/nuget": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Abstractions\\PaymentGateway.Abstractions.csproj": {
+                "projectPath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Abstractions\\PaymentGateway.Abstractions.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Models\\PaymentGateway.Models.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -55,7 +238,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -84,6 +267,15 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Abstractions\\PaymentGateway.Abstractions.csproj": {
+                "projectPath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Abstractions\\PaymentGateway.Abstractions.csproj"
+              },
+              "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Data\\PaymentGateway.Data.csproj": {
+                "projectPath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Data\\PaymentGateway.Data.csproj"
+              },
+              "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.ExternalService\\PaymentGateway.ExternalService.csproj": {
+                "projectPath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.ExternalService\\PaymentGateway.ExternalService.csproj"
+              },
               "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Models\\PaymentGateway.Models.csproj": {
                 "projectPath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Models\\PaymentGateway.Models.csproj"
               }
@@ -99,6 +291,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -114,7 +312,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

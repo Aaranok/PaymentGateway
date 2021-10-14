@@ -2,6 +2,55 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "MediatR/9.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/MediatR.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/MediatR.dll": {}
+        }
+      },
+      "PaymentGateway.Abstractions/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "PaymentGateway.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PaymentGateway.Abstractions.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PaymentGateway.Abstractions.dll": {}
+        }
+      },
+      "PaymentGateway.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "PaymentGateway.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PaymentGateway.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PaymentGateway.Data.dll": {}
+        }
+      },
+      "PaymentGateway.ExternalService/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "MediatR": "9.0.0",
+          "PaymentGateway.Abstractions": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PaymentGateway.ExternalService.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PaymentGateway.ExternalService.dll": {}
+        }
+      },
       "PaymentGateway.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -15,6 +64,39 @@
     }
   },
   "libraries": {
+    "MediatR/9.0.0": {
+      "sha512": "8b3UYNxegHVYcJMG2zH8wn+YqxLvXG+eMfj0cMCq/jTW72p6O3PCKMkrIv0mqyxdW7bA4gblsocw7n+/9Akg5g==",
+      "type": "package",
+      "path": "mediatr/9.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "gradient_128x128.png",
+        "lib/net461/MediatR.dll",
+        "lib/net461/MediatR.xml",
+        "lib/netstandard2.0/MediatR.dll",
+        "lib/netstandard2.0/MediatR.xml",
+        "lib/netstandard2.1/MediatR.dll",
+        "lib/netstandard2.1/MediatR.xml",
+        "mediatr.9.0.0.nupkg.sha512",
+        "mediatr.nuspec"
+      ]
+    },
+    "PaymentGateway.Abstractions/1.0.0": {
+      "type": "project",
+      "path": "../PaymentGateway.Abstractions/PaymentGateway.Abstractions.csproj",
+      "msbuildProject": "../PaymentGateway.Abstractions/PaymentGateway.Abstractions.csproj"
+    },
+    "PaymentGateway.Data/1.0.0": {
+      "type": "project",
+      "path": "../PaymentGateway.Data/PaymentGateway.Data.csproj",
+      "msbuildProject": "../PaymentGateway.Data/PaymentGateway.Data.csproj"
+    },
+    "PaymentGateway.ExternalService/1.0.0": {
+      "type": "project",
+      "path": "../PaymentGateway.ExternalService/PaymentGateway.ExternalService.csproj",
+      "msbuildProject": "../PaymentGateway.ExternalService/PaymentGateway.ExternalService.csproj"
+    },
     "PaymentGateway.Models/1.0.0": {
       "type": "project",
       "path": "../PaymentGateway.Models/PaymentGateway.Models.csproj",
@@ -23,6 +105,10 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "MediatR >= 9.0.0",
+      "PaymentGateway.Abstractions >= 1.0.0",
+      "PaymentGateway.Data >= 1.0.0",
+      "PaymentGateway.ExternalService >= 1.0.0",
       "PaymentGateway.Models >= 1.0.0"
     ]
   },
@@ -54,6 +140,15 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Abstractions\\PaymentGateway.Abstractions.csproj": {
+              "projectPath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Abstractions\\PaymentGateway.Abstractions.csproj"
+            },
+            "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Data\\PaymentGateway.Data.csproj": {
+              "projectPath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Data\\PaymentGateway.Data.csproj"
+            },
+            "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.ExternalService\\PaymentGateway.ExternalService.csproj": {
+              "projectPath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.ExternalService\\PaymentGateway.ExternalService.csproj"
+            },
             "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Models\\PaymentGateway.Models.csproj": {
               "projectPath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Models\\PaymentGateway.Models.csproj"
             }
@@ -69,6 +164,12 @@
     "frameworks": {
       "net5.0": {
         "targetAlias": "net5.0",
+        "dependencies": {
+          "MediatR": {
+            "target": "Package",
+            "version": "[9.0.0, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -84,7 +185,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -27,4 +27,10 @@ D:\Work\GIT\PaymentGateway\PymentGateway.PublishedLanguage\obj\Debug\net5.0\Paym
 D:\Work\GIT\PaymentGateway\PymentGateway.PublishedLanguage\obj\Debug\net5.0\PaymentGateway.PublishedLanguage.dll
 D:\Work\GIT\PaymentGateway\PymentGateway.PublishedLanguage\obj\Debug\net5.0\ref\PaymentGateway.PublishedLanguage.dll
 D:\Work\GIT\PaymentGateway\PymentGateway.PublishedLanguage\obj\Debug\net5.0\PaymentGateway.PublishedLanguage.pdb
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PymentGateway.PublishedLanguage\bin\Debug\net5.0\PaymentGateway.Abstractions.dll
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PymentGateway.PublishedLanguage\bin\Debug\net5.0\PaymentGateway.Data.dll
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PymentGateway.PublishedLanguage\bin\Debug\net5.0\PaymentGateway.ExternalService.dll
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PymentGateway.PublishedLanguage\bin\Debug\net5.0\PaymentGateway.Abstractions.pdb
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PymentGateway.PublishedLanguage\bin\Debug\net5.0\PaymentGateway.Data.pdb
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PymentGateway.PublishedLanguage\bin\Debug\net5.0\PaymentGateway.ExternalService.pdb
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PymentGateway.PublishedLanguage\obj\Debug\net5.0\PaymentGateway.PublishedLanguage.csproj.CopyComplete

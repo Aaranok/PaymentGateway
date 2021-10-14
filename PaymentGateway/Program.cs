@@ -1,10 +1,8 @@
-﻿using PaymentGateway.Abstractions;
-using PaymentGateway.Application.WriteOperations;
+﻿using PaymentGateway.Application.WriteOperations;
 using PaymentGateway.Data;
 using PaymentGateway.ExternalService;
 using PaymentGateway.Models;
-using PaymentGateway.PublishedLanguage.WriteSide;
-using PaymentGateway.WriteSide;
+using PaymentGateway.PublishedLanguage.Commands;
 using System;
 using static PaymentGateway.Models.ServiceXTransaction;
 using Microsoft.Extensions.Configuration;
@@ -31,14 +29,11 @@ namespace PaymentGateway
             var services = new ServiceCollection();
             services.RegisterBusinessServices(Configuration);
 
-            services.AddSingleton<IEventSender, EventSender>();
             services.AddSingleton(Configuration);
 
             var serviceProvider = services.BuildServiceProvider();
 
-            //Database DB = new Database();
             var DB = serviceProvider.GetRequiredService<Database>();
-
 
             var customer1 = new EnrollCustomerCommand();
             customer1.Name = "Gigi";
@@ -48,7 +43,7 @@ namespace PaymentGateway
             customer1.AccountType = "Credit";
 
             var enrollOp1 = serviceProvider.GetRequiredService<EnrollCustomerOperation>();
-            enrollOp1.PerformOperation(customer1);
+            enrollOp1.Handle(customer1, default).GetAwaiter().GetResult();
 
             CreateAccountCommand account1 = new CreateAccountCommand();
             account1.AccountType = "Credit";
@@ -58,31 +53,31 @@ namespace PaymentGateway
             account1.Name = "Gigi";
 
             var createAccount1 = serviceProvider.GetRequiredService<CreateAccount>();
-            createAccount1.PerformOperation(account1);
+            createAccount1.Handle(account1, default).GetAwaiter().GetResult();
+
 
             DepositMoneyCommand depMoney = new DepositMoneyCommand();
             depMoney.DateOfTransaction = DateTime.UtcNow.AddDays(-3);
             depMoney.DateOfOperation = DateTime.UtcNow;
             depMoney.Currency = "$";
             depMoney.Amount = 300;
-            //depMoney.Iban = DB.GetIbanByCnp(account1.Cnp);
             AccountIbanOperations getIbanOp = new AccountIbanOperations(DB);
             depMoney.Iban = getIbanOp.GetIbanByCnp(account1.Cnp);
 
             DepositMoney depMoneyEvent1 = serviceProvider.GetRequiredService<DepositMoney>();
-            depMoneyEvent1.PerformOperation(depMoney);
+            depMoneyEvent1.Handle(depMoney, default).GetAwaiter().GetResult();
+
 
             WithdrawMoneyCommand witMoneyCmd = new WithdrawMoneyCommand();
             witMoneyCmd.Amount = 100;
             witMoneyCmd.Currency = "$";
             witMoneyCmd.DateOfTransaction = DateTime.UtcNow.AddDays(-2);
             witMoneyCmd.DateOfOperation = DateTime.UtcNow;
-            //witMoneyCmd.Iban = DB.GetIbanByCnp(account1.Cnp);
-            //AccountIbanOperations getIbanOp = new AccountIbanOperations(DB);
-            depMoney.Iban = getIbanOp.GetIbanByCnp(account1.Cnp);
+            witMoneyCmd.Iban = getIbanOp.GetIbanByCnp(account1.Cnp);
 
             WithdrawMoney withdrawMoneyEvent = serviceProvider.GetRequiredService<WithdrawMoney>();
-            withdrawMoneyEvent.PerformOperation(witMoneyCmd);
+            withdrawMoneyEvent.Handle(witMoneyCmd, default).GetAwaiter().GetResult();
+
 
             CreateServiceCommand createServCmd = new CreateServiceCommand();
             createServCmd.Limit = 50;
@@ -91,7 +86,8 @@ namespace PaymentGateway
             createServCmd.Currency = "$";
 
             CreateService createServiceEvent = serviceProvider.GetRequiredService<CreateService>();
-            createServiceEvent.PerformOperation(createServCmd);
+            createServiceEvent.Handle(createServCmd, default).GetAwaiter().GetResult();
+
 
             CreateServiceCommand createServCmd2 = new CreateServiceCommand();
             createServCmd2.Limit = 2;
@@ -100,30 +96,28 @@ namespace PaymentGateway
             createServCmd2.Currency = "$";
 
             CreateService createServiceEvent2 = serviceProvider.GetRequiredService<CreateService>();
-            createServiceEvent2.PerformOperation(createServCmd2);
+            createServiceEvent2.Handle(createServCmd2, default).GetAwaiter().GetResult();
 
             PurchaseServiceCommand purchaseService = new PurchaseServiceCommand();
-            //purchaseService.Iban = DB.GetIbanByCnp(account1.Cnp);
             purchaseService.Iban = getIbanOp.GetIbanByCnp(account1.Cnp);
             purchaseService.personName = "Gigi";
             purchaseService.DateOfTransaction = DateTime.UtcNow;
 
             ServiceList listItem;
             Service aux = new Service();
-            //aux = DB.GetServiceFromName("Schema");
             ServiceReadOperations servRead = new ServiceReadOperations();
             aux = servRead.GetServiceByName("Schema");
             listItem.IdService = aux.Id;
             listItem.NoPurchased = 2;
             purchaseService.Product.Add(listItem);
-            //aux = DB.GetServiceFromName("Schema2");
             aux = servRead.GetServiceByName("Schema2");
             listItem.IdService = aux.Id;
             listItem.NoPurchased = 2;
             purchaseService.Product.Add(listItem);
 
             PurchaseService purchaseServiceEvent = serviceProvider.GetRequiredService<PurchaseService>();
-            purchaseServiceEvent.PerformOperation(purchaseService);
+            purchaseServiceEvent.Handle(purchaseService, default).GetAwaiter().GetResult();
+
 
             var query = new Application.ReadOperations.ListOfAccounts.Query
             {
@@ -131,7 +125,7 @@ namespace PaymentGateway
             };
 
             var handler = serviceProvider.GetRequiredService<ListOfAccounts.QueryHandler>();
-            var result = handler.PerformOperation(query);
+            var result = handler.Handle(query, default).GetAwaiter().GetResult();
 
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             //~~~~~~~~~~~~~~~~~~~~~         ZA OLD TINGS            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

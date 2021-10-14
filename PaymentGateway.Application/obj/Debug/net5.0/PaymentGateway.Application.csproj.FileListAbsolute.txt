@@ -39,3 +39,6 @@ D:\Work\GIT\PaymentGateway\PaymentGateway.Application\obj\Debug\net5.0\PaymentGa
 D:\Work\GIT\PaymentGateway\PaymentGateway.Application\obj\Debug\net5.0\PaymentGateway.Application.dll
 D:\Work\GIT\PaymentGateway\PaymentGateway.Application\obj\Debug\net5.0\ref\PaymentGateway.Application.dll
 D:\Work\GIT\PaymentGateway\PaymentGateway.Application\obj\Debug\net5.0\PaymentGateway.Application.pdb
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.Application\bin\Debug\net5.0\PaymentGateway.ExternalService.dll
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.Application\bin\Debug\net5.0\PaymentGateway.ExternalService.pdb
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.Application\obj\Debug\net5.0\PaymentGateway.Application.csproj.CopyComplete
