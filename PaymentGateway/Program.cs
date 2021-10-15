@@ -37,7 +37,6 @@ namespace PaymentGateway
             var cancellationToken = source.Token;
             services.RegisterBusinessServices(Configuration);
 
-
             //services.AddMediatR(typeof(ListOfAccounts).Assembly, typeof(AllEventsHandler).Assembly);
             services.Scan(scan => scan
                 .FromAssemblyOf<ListOfAccounts>()
@@ -73,7 +72,6 @@ namespace PaymentGateway
 
             await mediator.Send(customer1, cancellationToken);
 
-
             CreateAccountCommand account1 = new()
             {
                 AccountType = "Credit",
@@ -85,8 +83,6 @@ namespace PaymentGateway
 
             await mediator.Send(account1, cancellationToken);
 
-
-
             DepositMoneyCommand depMoney = new()
             {
                 DateOfTransaction = DateTime.UtcNow.AddDays(-3),
@@ -96,8 +92,6 @@ namespace PaymentGateway
             };
             AccountIbanOperations getIbanOp = new(DB);
             depMoney.Iban = getIbanOp.GetIbanByCnp(account1.Cnp);
-            //var aux_pers = DB.Persons.FirstOrDefault(person=> person.Cnp == account1.Cnp);
-            //depMoney.Iban = aux_pers.Accounts[0].IbanCode;
 
             await mediator.Send(depMoney, cancellationToken);
 

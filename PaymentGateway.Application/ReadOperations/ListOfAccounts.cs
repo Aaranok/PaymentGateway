@@ -1,5 +1,4 @@
-﻿using System;
-using PaymentGateway.Data;
+﻿using PaymentGateway.Data;
 using System.Collections.Generic;
 using System.Linq;
 using MediatR;
@@ -14,13 +13,13 @@ namespace PaymentGateway.Application.ReadOperations
         public class Validator : AbstractValidator<Query>
         {
 
-            public Validator(Database _database)
+            public Validator(Database database)
             {
                 RuleFor(q => q).Must(query =>
                 {
                     var person = query.PersonId.HasValue ?
-                    _database.Persons.FirstOrDefault(x => x.PersonID == query.PersonId) :
-                    _database.Persons.FirstOrDefault(x => x.Cnp == query.Cnp);
+                    database.Persons.FirstOrDefault(x => x.PersonID == query.PersonId) :
+                    database.Persons.FirstOrDefault(x => x.Cnp == query.Cnp);
 
                     return person != null;
                 }).WithMessage("Customer not found");
@@ -29,17 +28,22 @@ namespace PaymentGateway.Application.ReadOperations
 
         public class Validator2 : AbstractValidator<Query>
         {
-            public Validator2(Database _database)
+            public Validator2(Database database)
             {
-                RuleFor(q => q).Must(query =>
+                RuleFor(q => q).Must(q =>
                 {
-                    var person = query.PersonId.HasValue ?
-                    _database.Persons.FirstOrDefault(x => x.PersonID == query.PersonId) :
-                    _database.Persons.FirstOrDefault(x => x.Cnp == query.Cnp);
-                    return person != null;
+                    return q.PersonId.HasValue || !string.IsNullOrEmpty(q.Cnp);
+                }).WithMessage("Person Id data is invalid - ");
 
-                }).WithMessage("Customer not found");
+                //RuleFor(q => q.Cnp).Must(cnp =>
+                //{
+                //    return !string.IsNullOrEmpty(cnp);
+                //}).WithMessage("CNP is empty");
 
+                //RuleFor(q => q.PersonId).Must(personId => { 
+                //    var exists = database.Persons.Any(x => x.PersonID == personId);
+                //    return exists;
+                //}).WithMessage("Customer does not exist");
             }
         }
             public class Query : IRequest<List<Model>>
@@ -51,7 +55,6 @@ namespace PaymentGateway.Application.ReadOperations
             public class QueryHandler : IRequestHandler<Query, List<Model>>
             {
                 private readonly Database _database;
-                private readonly IValidator<Query> _validator;
 
                 public QueryHandler(Database database)
                 {
