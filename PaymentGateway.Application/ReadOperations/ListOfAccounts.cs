@@ -33,18 +33,26 @@ namespace PaymentGateway.Application.ReadOperations
                 RuleFor(q => q).Must(q =>
                 {
                     return q.PersonId.HasValue || !string.IsNullOrEmpty(q.Cnp);
-                }).WithMessage("Person Id data is invalid - ");
+                }).WithMessage("Person data is invalid - ");
 
-                //RuleFor(q => q.Cnp).Must(cnp =>
-                //{
-                //    return !string.IsNullOrEmpty(cnp);
-                //}).WithMessage("CNP is empty");
+                RuleFor(q => q.Cnp).Must(cnp =>
+                {
+                   if (string.IsNullOrEmpty(cnp))
+                   {
+                       return true;
+                   }
+                return cnp.Length == 13;
+                }).WithMessage("CNP not 13 characters long");
 
-                //RuleFor(q => q.PersonId).Must(personId => { 
-                //    var exists = database.Persons.Any(x => x.PersonID == personId);
-                //    return exists;
-                //}).WithMessage("Customer does not exist");
-            }
+                RuleFor(q => q.PersonId).Must(personId => 
+                {
+                    if (!personId.HasValue)
+                    {
+                        return true;//why?
+                    }
+                return personId.Value > 0;
+            }).WithMessage("Person id is not positive");
+        }
         }
             public class Query : IRequest<List<Model>>
             {
