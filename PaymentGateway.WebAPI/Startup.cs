@@ -9,8 +9,7 @@ using PaymentGateway.Application;
 using PaymentGateway.Application.ReadOperations;
 using PaymentGateway.ExternalService;
 using PaymentGateway.PublishedLanguage.Events;
-using PaymentGateway.WebApi;
-using PaymentGateway.WebApi.MediatorPipeline;
+using PaymentGateway.WebApi.Middleware;
 using PaymentGateway.WebApi.Swagger;
 
 namespace PaymentGateway.WebAPI
@@ -19,8 +18,6 @@ namespace PaymentGateway.WebAPI
     {
         public IConfiguration Configuration { get; }
 
-
-
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -28,13 +25,8 @@ namespace PaymentGateway.WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddMvc(o => o.EnableEndpointRouting = false);
 
-            //services.AddSingleton<IEventSender, EventSender>();
-            //var firstAssembly = typeof(ListOfAccounts).Assembly; // handlere c1..c3
-            //var secondAssembly = typeof(AllEventsHandler).Assembly; // catch all
-            //services.AddMediatR(firstAssembly, secondAssembly); // get all IRequestHandler and INotificationHandler classes
-            //services.AddMediatR(new[] { firstAssembly, secondAssembly }); // get all IRequestHandler and INotificationHandler classes
+            services.AddMvc(o => o.EnableEndpointRouting = false);
 
             services.Scan(scan => scan
                 .FromAssemblyOf<ListOfAccounts>()
@@ -50,28 +42,14 @@ namespace PaymentGateway.WebAPI
 
 
             services.AddScopedContravariant<INotificationHandler<INotification>, AllEventsHandler>(typeof(CustomerEnrolled).Assembly);
-            /*services.AddTransient<CreateAccount>();
-
-            //services.AddSingleton<AccountOptions>(new AccountOptions { InitialBalance = 200 });
-            services.AddSingleton<AccountOptions>(sp =>
-            {
-                var config = sp.GetRequiredService<IConfiguration>();
-                var options = new AccountOptions
-                {
-                    InitialBalance = config.GetValue("AccountOptions:InitialBalance", 0)
-                };
-                return options;
-            });
-
-            //services.Configure<AccountOptions>(Configuration.GetSection("AccountOptions"));
-            */
+            
             services.RegisterBusinessServices(Configuration);
             services.AddSwagger(Configuration["Identity:Authority"]);
 
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IConfiguration configuration)
         {
-
+            app.UseMiddleware<ErrorMiddleware>(); // error 
             app.UseCors(cors =>
             {
                 cors.AllowAnyHeader()
@@ -85,8 +63,6 @@ namespace PaymentGateway.WebAPI
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Payment gateway Api");
-                //c.OAuthClientId("CharismaFinancialServices");
-                //c.OAuthScopeSeparator(" ");
                 c.EnableValidator(null);
             });
             app.UseRouting();
