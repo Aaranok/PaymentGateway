@@ -12,6 +12,7 @@
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="$(SwashbuckleAspNetCore)" />
 		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="$(AutoMapperExtensionsPackageVersion)" />
 		<PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="$(MediatRPackageVersion)" />
+		<PackageReference Include="Scrutor" Version="$(ScrutorPackageVersion)" />
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\PaymentGateway.Abstractions\PaymentGateway.Abstractions.csproj" />

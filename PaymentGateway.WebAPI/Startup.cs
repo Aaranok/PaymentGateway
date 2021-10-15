@@ -1,4 +1,6 @@
-﻿using MediatR;
+﻿using FluentValidation;
+using MediatR;
+using MediatR.Pipeline;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -28,10 +30,22 @@ namespace PaymentGateway.WebAPI
             services.AddMvc(o => o.EnableEndpointRouting = false);
 
             //services.AddSingleton<IEventSender, EventSender>();
-            var firstAssembly = typeof(ListOfAccounts).Assembly; // handlere c1..c3
-            var secondAssembly = typeof(AllEventsHandler).Assembly; // catch all
+            //var firstAssembly = typeof(ListOfAccounts).Assembly; // handlere c1..c3
+            //var secondAssembly = typeof(AllEventsHandler).Assembly; // catch all
             //services.AddMediatR(firstAssembly, secondAssembly); // get all IRequestHandler and INotificationHandler classes
-            services.AddMediatR(new[] { firstAssembly, secondAssembly }); // get all IRequestHandler and INotificationHandler classes
+            //services.AddMediatR(new[] { firstAssembly, secondAssembly }); // get all IRequestHandler and INotificationHandler classes
+
+            services.Scan(scan => scan
+                .FromAssemblyOf<ListOfAccounts>()
+                .AddClasses(classes => classes.AssignableTo<IValidator>())
+                .AsImplementedInterfaces()
+                .WithScopedLifetime());
+
+            services.AddMediatR(new[] { typeof(ListOfAccounts).Assembly, typeof(AllEventsHandler).Assembly }); // get all IRequestHandler and INotificationHandler classes
+
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(RequestPreProcessorBehavior<,>));
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(RequestPostProcessorBehavior<,>));
+
             services.AddScopedContravariant<INotificationHandler<INotification>, AllEventsHandler>(typeof(CustomerEnrolled).Assembly);
             /*services.AddTransient<CreateAccount>();
 

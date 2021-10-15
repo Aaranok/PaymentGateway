@@ -113,6 +113,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[9.5.0, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[9.0.0, )"
@@ -395,6 +399,10 @@
               "target": "Package",
               "version": "[9.0.0, )"
             },
+            "Scrutor": {
+              "target": "Package",
+              "version": "[3.3.0, )"
+            },
             "Serilog.AspNetCore": {
               "target": "Package",
               "version": "[3.4.0, )"
@@ -529,6 +537,10 @@
             "NBB.Core.DependencyInjection": {
               "target": "Package",
               "version": "[3.4.38, )"
+            },
+            "Scrutor": {
+              "target": "Package",
+              "version": "[3.3.0, )"
             }
           },
           "imports": [

@@ -4,6 +4,7 @@ using PaymentGateway.Models;
 using PaymentGateway.PublishedLanguage.Commands;
 using System;
 using MediatR;
+using MediatR.Pipeline;
 using static PaymentGateway.Models.ServiceXTransaction;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,6 +15,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.Linq;
 using PaymentGateway.PublishedLanguage.Events;
+using FluentValidation;
 
 namespace PaymentGateway
 {
@@ -36,7 +38,17 @@ namespace PaymentGateway
             services.RegisterBusinessServices(Configuration);
 
 
-            services.AddMediatR(typeof(ListOfAccounts).Assembly, typeof(AllEventsHandler).Assembly);
+            //services.AddMediatR(typeof(ListOfAccounts).Assembly, typeof(AllEventsHandler).Assembly);
+            services.Scan(scan => scan
+                .FromAssemblyOf<ListOfAccounts>()
+                .AddClasses(classes => classes.AssignableTo<IValidator>())
+                .AsImplementedInterfaces()
+                .WithScopedLifetime());
+
+            services.AddMediatR(new[] { typeof(ListOfAccounts).Assembly, typeof(AllEventsHandler).Assembly }); // get all IRequestHandler and INotificationHandler classes
+
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(RequestPreProcessorBehavior<,>));
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(RequestPostProcessorBehavior<,>));
 
             services.AddScopedContravariant<INotificationHandler<INotification>, AllEventsHandler>(typeof(CustomerEnrolled).Assembly);
 
@@ -140,9 +152,9 @@ namespace PaymentGateway
 
             await mediator.Send(purchaseService, cancellationToken);
 
-            var query = new Application.ReadOperations.ListOfAccounts.Query
+            var query = new ListOfAccounts.Query
             {
-                PersonId = 1
+               PersonId = 1
             };
 
             var result = await mediator.Send(query, cancellationToken);

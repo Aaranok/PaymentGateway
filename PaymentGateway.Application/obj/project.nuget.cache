@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "4B71vDwpv1RA3TDsSFj0FQINHcx86LnxTS8+slOhAorIcIQD1YYK4weezkfqDfflk2zo2+S4ITxiUG9rMxQEkw==",
+  "dgSpecHash": "mDaKJ4OJlRIviX/a1FdrdP7SZ5m2XErbH7Qvcz1x3TH3rkCn5eHbvteCAOjxubgjL2X4NwUPfkHzTec1oUHuhw==",
   "success": true,
   "projectFilePath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.Application\\PaymentGateway.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\fluentvalidation\\9.5.0\\fluentvalidation.9.5.0.nupkg.sha512",
     "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
     "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\microsoft.extensions.configuration\\5.0.0\\microsoft.extensions.configuration.5.0.0.nupkg.sha512",
     "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
