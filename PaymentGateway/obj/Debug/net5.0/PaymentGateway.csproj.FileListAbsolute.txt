@@ -28,7 +28,6 @@ C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway\bin\Debug\net
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway\bin\Debug\net5.0\PaymentGateway.ExternalService.pdb
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway\bin\Debug\net5.0\appsettings.json
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway\bin\Debug\net5.0\JetBrains.Annotations.dll
-C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway\bin\Debug\net5.0\Microsoft.Extensions.Configuration.dll
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway\bin\Debug\net5.0\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway\bin\Debug\net5.0\Microsoft.Extensions.Configuration.Binder.dll
@@ -43,7 +42,6 @@ C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway\bin\Debug\net
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway\bin\Debug\net5.0\Microsoft.Extensions.FileSystemGlobbing.dll
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway\bin\Debug\net5.0\NBB.Core.DependencyInjection.dll
-C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway\bin\Debug\net5.0\Scrutor.dll
 D:\Work\GIT\PaymentGateway\PaymentGateway\bin\Debug\net5.0\PaymentGateway.exe
 D:\Work\GIT\PaymentGateway\PaymentGateway\bin\Debug\net5.0\appsettings.json
@@ -95,3 +93,4 @@ D:\Work\GIT\PaymentGateway\PaymentGateway\obj\Debug\net5.0\PaymentGateway.genrun
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway\bin\Debug\net5.0\MediatR.dll
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway\bin\Debug\net5.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway\obj\Debug\net5.0\PaymentGateway.csproj.CopyComplete
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway\bin\Debug\net5.0\FluentValidation.dll

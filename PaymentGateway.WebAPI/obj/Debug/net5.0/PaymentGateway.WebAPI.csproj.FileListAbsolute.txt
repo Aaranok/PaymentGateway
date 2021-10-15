@@ -8,7 +8,6 @@ C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.WebAPI\bin\De
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.WebAPI\bin\Debug\net5.0\PaymentGateway.WebAPI.pdb
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.WebAPI\bin\Debug\net5.0\Microsoft.Azure.Services.AppAuthentication.dll
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.WebAPI\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
-C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.WebAPI\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.WebAPI\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.WebAPI\bin\Debug\net5.0\Microsoft.Identity.Client.dll
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.WebAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
@@ -170,3 +169,4 @@ C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.WebAPI\bin\De
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.WebAPI\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.WebAPI\bin\Debug\net5.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.WebAPI\obj\Debug\net5.0\PaymentGateway.WebAPI.csproj.CopyComplete
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.WebAPI\bin\Debug\net5.0\FluentValidation.dll

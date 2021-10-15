@@ -10,6 +10,7 @@ using PaymentGateway.Application.ReadOperations;
 using PaymentGateway.ExternalService;
 using PaymentGateway.PublishedLanguage.Events;
 using PaymentGateway.WebApi;
+using PaymentGateway.WebApi.MediatorPipeline;
 using PaymentGateway.WebApi.Swagger;
 
 namespace PaymentGateway.WebAPI
@@ -45,6 +46,8 @@ namespace PaymentGateway.WebAPI
 
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(RequestPreProcessorBehavior<,>));
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(RequestPostProcessorBehavior<,>));
+            services.AddScoped(typeof(IRequestPreProcessor<>), typeof(ValidationPreProcessor<>));
+
 
             services.AddScopedContravariant<INotificationHandler<INotification>, AllEventsHandler>(typeof(CustomerEnrolled).Assembly);
             /*services.AddTransient<CreateAccount>();

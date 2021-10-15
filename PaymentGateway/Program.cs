@@ -52,6 +52,8 @@ namespace PaymentGateway
 
             services.AddScopedContravariant<INotificationHandler<INotification>, AllEventsHandler>(typeof(CustomerEnrolled).Assembly);
 
+            services.AddMediatR(new[] { typeof(ListOfAccounts).Assembly, typeof(AllEventsHandler).Assembly }); // get all IRequestHandler and INotificationHandler classes
+
             services.AddSingleton(Configuration);
 
             var serviceProvider = services.BuildServiceProvider();
