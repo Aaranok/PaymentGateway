@@ -43,7 +43,7 @@ namespace PaymentGateway.Application.WriteOperations
 
             account.Balance += transaction.Amount;
             DepositDone eventDepDone = new(request.Iban, request.Currency, request.Amount, request.DateOfOperation);
-            _dbContext.SaveChange();
+            _dbContext.SaveChanges();
             await _mediator.Publish(eventDepDone, cancellationToken);
             return Unit.Value;
         }

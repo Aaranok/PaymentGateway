@@ -10,13 +10,13 @@ namespace PaymentGateway.Application.WriteOperations
 {
     public class CreateService : IRequestHandler<CreateServiceCommand>
     {
-        private readonly Database _database;
+        private readonly PaymentDbContext _dbContext;
         private readonly IMediator _mediator;
 
-        public CreateService(IMediator mediator, Database database)
+        public CreateService(IMediator mediator, PaymentDbContext dbContext)
         {
             _mediator = mediator;
-            _database = database;
+            _dbContext = dbContext;
         }
 
         public async Task<Unit> Handle(CreateServiceCommand request, CancellationToken cancellationToken)
@@ -29,8 +29,8 @@ namespace PaymentGateway.Application.WriteOperations
                 Currency = request.Currency
             };
 
-            _database.Services.Add(service);
-            _database.SaveChange();
+            _dbContext.Services.Add(service);
+            _dbContext.SaveChanges();
             ServiceCreated eventServCreated = new(request.Name, request.Value, request.Limit, request.Currency);
             await _mediator.Publish(eventServCreated, cancellationToken);
 

@@ -33,4 +33,3 @@ C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PymentGateway.PublishedLangu
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PymentGateway.PublishedLanguage\bin\Debug\net5.0\PaymentGateway.Abstractions.pdb
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PymentGateway.PublishedLanguage\bin\Debug\net5.0\PaymentGateway.Data.pdb
 C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PymentGateway.PublishedLanguage\bin\Debug\net5.0\PaymentGateway.ExternalService.pdb
-C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PymentGateway.PublishedLanguage\obj\Debug\net5.0\PaymentGateway.PublishedLanguage.csproj.CopyComplete

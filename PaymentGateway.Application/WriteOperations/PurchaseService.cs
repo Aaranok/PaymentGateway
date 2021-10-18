@@ -64,10 +64,11 @@ namespace PaymentGateway.Application.WriteOperations
                 Currency = currency,
                 DateOfTransaction = request.DateOfTransaction,
                 Value = totalValue,
-                Type = "Purchase"
-        };
+                Type = "Purchase",
+                AccountId = account.AccountID
+            };
             transaction.DateOfOperation = transaction.GetOpDate();
-            transaction.Id = _dbContext.Transactions.Count() + 1;
+            //transaction.Id = _dbContext.Transactions.Count() + 1;
 
             _dbContext.Transactions.Add(transaction);
 
@@ -81,10 +82,10 @@ namespace PaymentGateway.Application.WriteOperations
                 };
                 servXTransItem.ServiceIdList.IdService = item.IdService;
                 servXTransItem.ServiceIdList.NoPurchased = item.NoPurchased;
-                _dbContext.ServXTrans.Add(servXTransItem);
+                _dbContext.ServiceXTransaction.Add(servXTransItem);
             }
 
-            _dbContext.SaveChange();
+            _dbContext.SaveChanges();
             ServicePurchased eventServPurchased = new(request.Iban, request.Cnp, request.PersonName, request.Product);
             await _mediator.Publish(eventServPurchased, cancellationToken);
             return Unit.Value;

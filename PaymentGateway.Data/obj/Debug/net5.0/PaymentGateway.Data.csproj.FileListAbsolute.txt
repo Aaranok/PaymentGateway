@@ -27,3 +27,4 @@ D:\Work\GIT\PaymentGateway\PaymentGateway.Data\obj\Debug\net5.0\PaymentGateway.D
 D:\Work\GIT\PaymentGateway\PaymentGateway.Data\obj\Debug\net5.0\PaymentGateway.Data.dll
 D:\Work\GIT\PaymentGateway\PaymentGateway.Data\obj\Debug\net5.0\ref\PaymentGateway.Data.dll
 D:\Work\GIT\PaymentGateway\PaymentGateway.Data\obj\Debug\net5.0\PaymentGateway.Data.pdb
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.Data\obj\Debug\net5.0\PaymentGateway.Data.csproj.CopyComplete

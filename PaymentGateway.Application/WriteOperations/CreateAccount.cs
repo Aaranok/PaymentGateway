@@ -44,7 +44,7 @@ namespace PaymentGateway.Application.WriteOperations
             person.Accounts.Add(account);
             _dbContext.Accounts.Add(account);
 
-            _dbContext.SaveChange();
+            _dbContext.SaveChanges();
             AccountCreated eventAccCreated = new(request.Name, request.Cnp, account.IbanCode, request.AccountType, account.Status);
             await _mediator.Publish(eventAccCreated, cancellationToken);
             return Unit.Value;

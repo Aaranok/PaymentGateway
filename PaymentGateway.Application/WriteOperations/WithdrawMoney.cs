@@ -47,7 +47,7 @@ namespace PaymentGateway.Application.WriteOperations
             transaction.DateOfOperation = transaction.GetOpDate();
 
             account.Balance -= transaction.Amount;
-            _dbContext.SaveChange();
+            _dbContext.SaveChanges();
             WithdrawDone eventWitDone = new(request.Iban, request.Currency, request.Amount, request.DateOfOperation);
             await _mediator.Publish(eventWitDone, cancellationToken);
             return Unit.Value;
