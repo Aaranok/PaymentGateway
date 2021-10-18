@@ -18,8 +18,8 @@ namespace PaymentGateway.Application.ReadOperations
                 RuleFor(q => q).Must(query =>
                 {
                     var person = query.PersonId.HasValue ?
-                    _dbContext.Persons.FirstOrDefault(x => x.PersonID == query.PersonId) :
-                    _dbContext.Persons.FirstOrDefault(x => x.Cnp == query.Cnp);
+                    _dbContext.People.FirstOrDefault(x => x.Id == query.PersonId) :
+                    _dbContext.People.FirstOrDefault(x => x.Cnp == query.Cnp);
 
                     return person != null;
                 }).WithMessage("Customer not found");
@@ -73,16 +73,16 @@ namespace PaymentGateway.Application.ReadOperations
                 {
 
                     var person = request.PersonId.HasValue ?
-                       _dbContext.Persons.FirstOrDefault(x => x.PersonID == request.PersonId) :
-                       _dbContext.Persons.FirstOrDefault(x => x.Cnp == request.Cnp);
+                       _dbContext.People.FirstOrDefault(x => x.Id == request.PersonId) :
+                       _dbContext.People.FirstOrDefault(x => x.Cnp == request.Cnp);
 
-                    var db = _dbContext.Accounts.Where(x => x.PersonID == person.PersonID);
+                    var db = _dbContext.Accounts.Where(x => x.PersonId == person.Id);
                     var result = db.Select(x => new Model
                     {
                         Balance = x.Balance,
                         Currency = x.Currency,
                         Iban = x.IbanCode,
-                        Id = x.AccountID,
+                        Id = x.Id,
                         Limit = x.Limit,
                         Status = x.Status,
                         Type = x.Type
@@ -97,7 +97,7 @@ namespace PaymentGateway.Application.ReadOperations
                 public string Currency { get; set; }
                 public string Iban { get; set; }
                 public string Status { get; set; }
-                public decimal Limit { get; set; }
+                public decimal? Limit { get; set; }
                 public string Type { get; set; }
             }
         }

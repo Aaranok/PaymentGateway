@@ -44,9 +44,10 @@ namespace PaymentGateway.Application.WriteOperations
                 Type = "Withdraw",
                 DateOfTransaction = request.DateOfTransaction
             };
-            transaction.DateOfOperation = transaction.GetOpDate();
+            transaction.DateOfOperation = transaction.DateOfTransaction.AddDays(2);
 
             account.Balance -= transaction.Amount;
+            _dbContext.Transactions.Add(transaction);
             _dbContext.SaveChanges();
             WithdrawDone eventWitDone = new(request.Iban, request.Currency, request.Amount, request.DateOfOperation);
             await _mediator.Publish(eventWitDone, cancellationToken);

@@ -8,7 +8,7 @@ namespace PaymentGateway.Data.EntityTypeConfiguration
     {
         public void Configure(EntityTypeBuilder<Person> builder)
         {
-            builder.HasKey(u => new { u.PersonID });
+            builder.HasKey(u => new { u.Id });
             builder.Property(x => x.Name).HasMaxLength(255);
         }
     }

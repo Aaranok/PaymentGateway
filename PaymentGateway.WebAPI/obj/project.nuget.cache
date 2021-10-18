@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "RVnpxbZEt+oQPnIB+LmaA/nnOJR8ydF0crS4l7eJ7PdfBBsR5YN/O6TipZSMpVrRkOx1jZbROidc8nUq/m0zTQ==",
+  "dgSpecHash": "mo7N47nu7LgRB+AXRdy9zI92U39+d7EF0gSYxag96geSFD83HJ9a1/mC9/oUWFHgJIU+AVPdaEieoWiSlo4RBA==",
   "success": true,
   "projectFilePath": "C:\\Users\\vlad.iacobescu\\source\\repos\\PaymentGateway\\PaymentGateway.WebAPI\\PaymentGateway.WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\automapper\\10.1.0\\automapper.10.1.0.nupkg.sha512",
     "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
     "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\fluentvalidation\\9.5.0\\fluentvalidation.9.5.0.nupkg.sha512",
+    "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\jetbrains.annotations\\11.1.0\\jetbrains.annotations.11.1.0.nupkg.sha512",
     "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
     "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
@@ -17,6 +18,7 @@
     "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.2\\microsoft.entityframeworkcore.5.0.2.nupkg.sha512",
     "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.2\\microsoft.entityframeworkcore.abstractions.5.0.2.nupkg.sha512",
     "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.2\\microsoft.entityframeworkcore.analyzers.5.0.2.nupkg.sha512",
+    "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\microsoft.entityframeworkcore.design\\5.0.2\\microsoft.entityframeworkcore.design.5.0.2.nupkg.sha512",
     "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\5.0.2\\microsoft.entityframeworkcore.relational.5.0.2.nupkg.sha512",
     "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\5.0.2\\microsoft.entityframeworkcore.sqlserver.5.0.2.nupkg.sha512",
     "C:\\Users\\vlad.iacobescu\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",

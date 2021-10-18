@@ -21,7 +21,7 @@ namespace PaymentGateway.Application.WriteOperations
 
         public async Task<Unit> Handle(CreateServiceCommand request, CancellationToken cancellationToken)
         {
-            Service service = new()
+            Product service = new()
             {
                 Value = request.Value,
                 Name = request.Name,
@@ -29,7 +29,7 @@ namespace PaymentGateway.Application.WriteOperations
                 Currency = request.Currency
             };
 
-            _dbContext.Services.Add(service);
+            _dbContext.Products.Add(service);
             _dbContext.SaveChanges();
             ServiceCreated eventServCreated = new(request.Name, request.Value, request.Limit, request.Currency);
             await _mediator.Publish(eventServCreated, cancellationToken);

@@ -22,3 +22,6 @@ D:\Work\GIT\PaymentGateway\PaymentGateway.Models\obj\Debug\net5.0\PaymentGateway
 D:\Work\GIT\PaymentGateway\PaymentGateway.Models\obj\Debug\net5.0\PaymentGateway.Models.dll
 D:\Work\GIT\PaymentGateway\PaymentGateway.Models\obj\Debug\net5.0\ref\PaymentGateway.Models.dll
 D:\Work\GIT\PaymentGateway\PaymentGateway.Models\obj\Debug\net5.0\PaymentGateway.Models.pdb
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.Models\bin\Debug\net5.0\PaymentGateway.Models.runtimeconfig.json
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.Models\bin\Debug\net5.0\PaymentGateway.Models.runtimeconfig.dev.json
+C:\Users\vlad.iacobescu\source\repos\PaymentGateway\PaymentGateway.Models\obj\Debug\net5.0\PaymentGateway.Models.genruntimeconfig.cache

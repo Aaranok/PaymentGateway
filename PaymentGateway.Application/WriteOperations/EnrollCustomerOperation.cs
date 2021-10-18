@@ -28,14 +28,15 @@ namespace PaymentGateway.Application.WriteOperations
                 //PersonID = _dbContext.Persons.Count + 1
             };
             if (request.ClientType == "Company")
-                person.Type = (int)PersonType.Company;
+                person.PersonType = (int)PersonType.Company;
             else if (request.ClientType == "Individual")
-                person.Type = (int)PersonType.Individual;
+                person.PersonType = (int)PersonType.Individual;
             else
                 throw new Exception("Unsupported Type");
 
 
-            _dbContext.Persons.Add(person);
+            _dbContext.People.Add(person);
+            _dbContext.SaveChanges();
 
             Account account = new()
             {
@@ -43,7 +44,7 @@ namespace PaymentGateway.Application.WriteOperations
                 Currency = request.Currency,
                 Balance = 0,
                 IbanCode = random.Next(1000000).ToString(),
-                PersonID = person.PersonID,
+                PersonId = person.Id,
                 Status = "Active"
             };
             _dbContext.Accounts.Add(account);

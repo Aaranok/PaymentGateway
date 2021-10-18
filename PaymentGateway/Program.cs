@@ -1,11 +1,9 @@
 ﻿using PaymentGateway.Data;
 using PaymentGateway.ExternalService;
-using PaymentGateway.Models;
 using PaymentGateway.PublishedLanguage.Commands;
 using System;
 using MediatR;
 using MediatR.Pipeline;
-using static PaymentGateway.Models.ServiceXTransaction;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PaymentGateway.Application;
@@ -13,9 +11,9 @@ using System.IO;
 using PaymentGateway.Application.ReadOperations;
 using System.Threading.Tasks;
 using System.Threading;
-using System.Linq;
 using PaymentGateway.PublishedLanguage.Events;
 using FluentValidation;
+using System.Linq;
 
 namespace PaymentGateway
 {
@@ -59,7 +57,6 @@ namespace PaymentGateway
 
             var serviceProvider = services.BuildServiceProvider();
 
-            //var DB = serviceProvider.GetRequiredService<Database>();
             var DB = serviceProvider.GetRequiredService<PaymentDbContext>();
 
 
@@ -95,7 +92,11 @@ namespace PaymentGateway
                 Amount = 300
             };
             AccountIbanOperations getIbanOp = new(DB);
-            depMoney.Iban = getIbanOp.GetIbanByCnp(account1.Cnp);
+            //depMoney.Iban = getIbanOp.GetIbanByCnp(account1.Cnp);//fix this // probably fixed
+            var auxPers = DB.People.FirstOrDefault(pers => pers.Cnp == account1.Cnp);
+            var auxAcc = DB.Accounts.FirstOrDefault(Acc => Acc.PersonId == auxPers.Id);
+
+            depMoney.Iban = auxAcc.IbanCode;
 
             await mediator.Send(depMoney, cancellationToken);
 
@@ -105,8 +106,10 @@ namespace PaymentGateway
                 Currency = "$",
                 DateOfTransaction = DateTime.UtcNow.AddDays(-2),
                 DateOfOperation = DateTime.UtcNow,
-                Iban = getIbanOp.GetIbanByCnp(account1.Cnp)
-            };
+        };
+            var auxPers2 = DB.People.FirstOrDefault(pers => pers.Cnp == account1.Cnp);
+            var auxAcc2 = DB.Accounts.FirstOrDefault(Acc => Acc.PersonId == auxPers.Id);
+            witMoneyCmd.Iban = auxAcc2.IbanCode;
 
             await mediator.Send(witMoneyCmd, cancellationToken);
 
@@ -129,7 +132,7 @@ namespace PaymentGateway
             };
 
             await mediator.Send(createServCmd2, cancellationToken);
-
+            /*
             PurchaseServiceCommand purchaseService = new()
             {
                 Iban = getIbanOp.GetIbanByCnp(account1.Cnp),
@@ -151,7 +154,7 @@ namespace PaymentGateway
             purchaseService.Product.Add(listItem);
 
             await mediator.Send(purchaseService, cancellationToken);
-
+            */
             var query = new ListOfAccounts.Query
             {
                PersonId = 1

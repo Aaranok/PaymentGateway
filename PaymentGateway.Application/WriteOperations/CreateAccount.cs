@@ -26,7 +26,7 @@ namespace PaymentGateway.Application.WriteOperations
 
         public async Task<Unit> Handle(CreateAccountCommand request, CancellationToken cancellationToken)
         {
-            var person = _dbContext.Persons.FirstOrDefault(e => e.Cnp == request.Cnp);
+            var person = _dbContext.People.FirstOrDefault(e => e.Cnp == request.Cnp);
 
             if (person == null)
                 throw new Exception("Costumer does not exist or CNP wrong");

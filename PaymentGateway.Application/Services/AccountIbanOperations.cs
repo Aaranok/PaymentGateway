@@ -16,10 +16,15 @@ namespace PaymentGateway.Application.ReadOperations
             _dbContext = dbContext;
         }
 
-        public string GetIbanByCnp(string cnp)
+        //public Account GetIbanByCnp(string cnp)
+        //{
+
+        //}
+
+        /*public string GetIbanByCnp(string cnp)
         {
 
-            foreach (var item in _dbContext.Persons)
+            foreach (var item in _dbContext.People)
             {
                 if (item.Cnp == cnp)
                     return item.Accounts[0].IbanCode;
@@ -35,6 +40,6 @@ namespace PaymentGateway.Application.ReadOperations
                     return item;
             }
             return null;
-        }
+        }*/
     }
 }

@@ -1,10 +1,5 @@
 ﻿using MediatR;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static PaymentGateway.Models.ServiceXTransaction;
 
 namespace PaymentGateway.PublishedLanguage.Commands
 {
@@ -14,7 +9,7 @@ namespace PaymentGateway.PublishedLanguage.Commands
         public string Cnp { get; set; }
         public string PersonName { get; set; }
         public DateTime DateOfTransaction { get; set; }
-        public List<ServiceList> Product = new();
+        //public List<ServiceList> Product = new();
 
     }
 }

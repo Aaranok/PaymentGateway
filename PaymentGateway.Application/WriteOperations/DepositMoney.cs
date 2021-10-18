@@ -36,12 +36,13 @@ namespace PaymentGateway.Application.WriteOperations
             {
                 Amount = request.Amount,
                 Currency = request.Currency,
-                DateOfTransaction = request.DateOfTransaction
+                DateOfTransaction = request.DateOfTransaction,
+                Type = "Deposit"
             };
-            transaction.DateOfOperation = transaction.GetOpDate();
-            transaction.Type = "Deposit";
+            transaction.DateOfOperation = transaction.DateOfTransaction.AddDays(2);
 
             account.Balance += transaction.Amount;
+            _dbContext.Transactions.Add(transaction);
             DepositDone eventDepDone = new(request.Iban, request.Currency, request.Amount, request.DateOfOperation);
             _dbContext.SaveChanges();
             await _mediator.Publish(eventDepDone, cancellationToken);

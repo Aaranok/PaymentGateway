@@ -23,73 +23,78 @@ namespace PaymentGateway.Application.WriteOperations
             _dbContext = dbContext;
         }
 
-        public async Task<Unit> Handle(PurchaseServiceCommand request, CancellationToken cancellationToken)
+        public Task<Unit> Handle(PurchaseServiceCommand request, CancellationToken cancellationToken)
         {
-            //var accountIdent = new AccountIbanOperations(_dbContext);
-            var account = _dbContext.Accounts.FirstOrDefault(account=> account.IbanCode == request.Iban);
-
-
-            if (account == null)
-            {
-                throw new Exception("Account not found");
-            }
-            decimal totalValue = 0;
-            string currency = "";
-            foreach (var item in request.Product)
-            {
-                var service = _dbContext.Services.FirstOrDefault(service => service.Id == item.IdService);
-
-                if (service == null)
-                {
-                    throw new Exception("Service not found");
-                }
-                if (service.Limit < item.NoPurchased)
-                {
-                    throw new Exception("Not enough items in storage");
-
-                }
-                totalValue += service.Value;
-                currency = service.Currency;
-                service.Limit -= item.NoPurchased;
-            }
-
-            if (totalValue > account.Balance)
-            {
-                throw new Exception("Not enough capital");
-            }
-
-            Transaction transaction = new()
-            {
-                Amount = totalValue,
-                Currency = currency,
-                DateOfTransaction = request.DateOfTransaction,
-                Value = totalValue,
-                Type = "Purchase",
-                AccountId = account.AccountID
-            };
-            transaction.DateOfOperation = transaction.GetOpDate();
-            //transaction.Id = _dbContext.Transactions.Count() + 1;
-
-            _dbContext.Transactions.Add(transaction);
-
-            account.Balance -= totalValue;
-
-            foreach (var item in request.Product)
-            {
-                ServiceXTransaction servXTransItem = new()
-                {
-                    IdTransaction = transaction.Id
-                };
-                servXTransItem.ServiceIdList.IdService = item.IdService;
-                servXTransItem.ServiceIdList.NoPurchased = item.NoPurchased;
-                _dbContext.ServiceXTransaction.Add(servXTransItem);
-            }
-
-            _dbContext.SaveChanges();
-            ServicePurchased eventServPurchased = new(request.Iban, request.Cnp, request.PersonName, request.Product);
-            await _mediator.Publish(eventServPurchased, cancellationToken);
-            return Unit.Value;
-
+            throw new NotImplementedException();
         }
+        /*
+public async Task<Unit> Handle(PurchaseServiceCommand request, CancellationToken cancellationToken)
+{
+   //var accountIdent = new AccountIbanOperations(_dbContext);
+   var account = _dbContext.Accounts.FirstOrDefault(account=> account.IbanCode == request.Iban);
+
+
+   if (account == null)
+   {
+       throw new Exception("Account not found");
+   }
+   decimal totalValue = 0;
+   string currency = "";
+   foreach (var item in request.Product)
+   {
+       var service = _dbContext.Services.FirstOrDefault(service => service.Id == item.IdService);
+
+       if (service == null)
+       {
+           throw new Exception("Service not found");
+       }
+       if (service.Limit < item.NoPurchased)
+       {
+           throw new Exception("Not enough items in storage");
+
+       }
+       totalValue += service.Value;
+       currency = service.Currency;
+       service.Limit -= item.NoPurchased;
+   }
+
+   if (totalValue > account.Balance)
+   {
+       throw new Exception("Not enough capital");
+   }
+
+   Transaction transaction = new()
+   {
+       Amount = totalValue,
+       Currency = currency,
+       DateOfTransaction = request.DateOfTransaction,
+       Value = totalValue,
+       Type = "Purchase",
+       AccountId = account.AccountID
+   };
+   transaction.DateOfOperation = transaction.GetOpDate();
+   //transaction.Id = _dbContext.Transactions.Count() + 1;
+
+   _dbContext.Transactions.Add(transaction);
+
+   account.Balance -= totalValue;
+
+   foreach (var item in request.Product)
+   {
+       ProductXTransaction servXTransItem = new()
+       {
+           IdTransaction = transaction.Id
+       };
+       servXTransItem.ServiceIdList.IdService = item.IdService;
+       servXTransItem.ServiceIdList.NoPurchased = item.NoPurchased;
+       _dbContext.ServiceXTransaction.Add(servXTransItem);
+   }
+
+   //_dbContext.SaveChanges();
+   //ServicePurchased eventServPurchased = new(request.Iban, request.Cnp, request.PersonName, request.Product);
+   //await _mediator.Publish(eventServPurchased, cancellationToken);
+   //return Unit.Value;
+
+}*/
     }
 }

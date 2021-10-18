@@ -1,10 +1,4 @@
 ﻿using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static PaymentGateway.Models.ServiceXTransaction;
 
 namespace PaymentGateway.PublishedLanguage.Events
 {
@@ -13,14 +7,14 @@ namespace PaymentGateway.PublishedLanguage.Events
         public string Iban { get; set; }
         public string Cnp { get; set; }
         public string PersonName { get; set; }
-        public List<ServiceList> ServiceIdList = new();
+        //public List<ServiceList> ServiceIdList = new();
 
 
-        public ServicePurchased(string iban, string cnp, string personName, List<ServiceList> serviceIdList){
+        public ServicePurchased(string iban, string cnp, string personName){
             this.Iban = iban;
             this.Cnp = cnp;
             this.PersonName = personName;
-            this.ServiceIdList = serviceIdList;
+            //this.ServiceIdList = serviceIdList;
         }
             
     }
