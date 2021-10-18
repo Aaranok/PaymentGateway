@@ -12,11 +12,11 @@ namespace PaymentGateway.Application.WriteOperations
     public class EnrollCustomerOperation : IRequestHandler<EnrollCustomerCommand>
     {
         private readonly IMediator _mediator;
-        private readonly Database _database;
-        public EnrollCustomerOperation(IMediator mediator, Database database)
+        private readonly Data.PaymentDbContext _dbContext;
+        public EnrollCustomerOperation(IMediator mediator, Data.PaymentDbContext dbContext)
         {
             _mediator = mediator;
-            _database = database;
+            _dbContext = dbContext;
         }
         public async Task<Unit> Handle(EnrollCustomerCommand request, CancellationToken cancellationToken)
         {
@@ -25,7 +25,7 @@ namespace PaymentGateway.Application.WriteOperations
             {
                 Cnp = request.Cnp,
                 Name = request.Name,
-                PersonID = _database.Persons.Count + 1
+                //PersonID = _dbContext.Persons.Count + 1
             };
             if (request.ClientType == "Company")
                 person.Type = (int)PersonType.Company;
@@ -35,7 +35,7 @@ namespace PaymentGateway.Application.WriteOperations
                 throw new Exception("Unsupported Type");
 
 
-            _database.Persons.Add(person);
+            _dbContext.Persons.Add(person);
 
             Account account = new()
             {
@@ -43,11 +43,12 @@ namespace PaymentGateway.Application.WriteOperations
                 Currency = request.Currency,
                 Balance = 0,
                 IbanCode = random.Next(1000000).ToString(),
-                PersonID = person.PersonID
+                PersonID = person.PersonID,
+                Status = "Active"
             };
-            _database.Accounts.Add(account);
+            _dbContext.Accounts.Add(account);
 
-            _database.SaveChange();
+            _dbContext.SaveChange();
             CustomerEnrolled eventCustEnroll = new(request.Name, request.Cnp, request.ClientType);
             await _mediator.Publish(eventCustEnroll, cancellationToken);
             return Unit.Value;

@@ -14,30 +14,30 @@ namespace PaymentGateway.Application.WriteOperations
 
     public class PurchaseService: IRequestHandler<PurchaseServiceCommand>
     {
-        private readonly Database _database;
+        private readonly Data.PaymentDbContext _dbContext;
         private readonly IMediator _mediator;
 
-        public PurchaseService(IMediator mediator, Database database)
+        public PurchaseService(IMediator mediator, Data.PaymentDbContext dbContext)
         {
             _mediator = mediator;
-            _database = database;
+            _dbContext = dbContext;
         }
 
         public async Task<Unit> Handle(PurchaseServiceCommand request, CancellationToken cancellationToken)
         {
-            var accountIdent = new AccountIbanOperations(_database);
-            var account = _database.Accounts.FirstOrDefault(account=> account.IbanCode == request.Iban);
+            //var accountIdent = new AccountIbanOperations(_dbContext);
+            var account = _dbContext.Accounts.FirstOrDefault(account=> account.IbanCode == request.Iban);
 
 
             if (account == null)
             {
                 throw new Exception("Account not found");
             }
-            double totalValue = 0;
+            decimal totalValue = 0;
             string currency = "";
             foreach (var item in request.Product)
             {
-                var service = _database.Services.FirstOrDefault(service => service.Id == item.IdService);
+                var service = _dbContext.Services.FirstOrDefault(service => service.Id == item.IdService);
 
                 if (service == null)
                 {
@@ -67,9 +67,9 @@ namespace PaymentGateway.Application.WriteOperations
                 Type = "Purchase"
         };
             transaction.DateOfOperation = transaction.GetOpDate();
-            transaction.Id = _database.Transactions.Count() + 1;
+            transaction.Id = _dbContext.Transactions.Count() + 1;
 
-            _database.Transactions.Add(transaction);
+            _dbContext.Transactions.Add(transaction);
 
             account.Balance -= totalValue;
 
@@ -81,10 +81,10 @@ namespace PaymentGateway.Application.WriteOperations
                 };
                 servXTransItem.ServiceIdList.IdService = item.IdService;
                 servXTransItem.ServiceIdList.NoPurchased = item.NoPurchased;
-                _database.ServXTrans.Add(servXTransItem);
+                _dbContext.ServXTrans.Add(servXTransItem);
             }
 
-            _database.SaveChange();
+            _dbContext.SaveChange();
             ServicePurchased eventServPurchased = new(request.Iban, request.Cnp, request.PersonName, request.Product);
             await _mediator.Publish(eventServPurchased, cancellationToken);
             return Unit.Value;

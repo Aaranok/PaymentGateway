@@ -16,17 +16,17 @@ namespace PaymentGateway.Application.WriteOperations
     {
         private readonly IMediator _mediator;
         private readonly AccountOptions _accountOptions;
-        private readonly Database _database;
-        public CreateAccount(IMediator mediator, AccountOptions accountOptions, Database database)
+        private readonly Data.PaymentDbContext _dbContext;
+        public CreateAccount(IMediator mediator, AccountOptions accountOptions, Data.PaymentDbContext dbContext)
         {
             _mediator = mediator;
             _accountOptions = accountOptions;
-            _database = database;
+            _dbContext = dbContext;
         }
-        
+
         public async Task<Unit> Handle(CreateAccountCommand request, CancellationToken cancellationToken)
         {
-            var person = _database.Persons.FirstOrDefault(e => e.Cnp == request.Cnp);
+            var person = _dbContext.Persons.FirstOrDefault(e => e.Cnp == request.Cnp);
 
             if (person == null)
                 throw new Exception("Costumer does not exist or CNP wrong");
@@ -42,9 +42,9 @@ namespace PaymentGateway.Application.WriteOperations
                 Status = "Active"
             };
             person.Accounts.Add(account);
-            _database.Accounts.Add(account);
+            _dbContext.Accounts.Add(account);
 
-            _database.SaveChange();
+            _dbContext.SaveChange();
             AccountCreated eventAccCreated = new(request.Name, request.Cnp, account.IbanCode, request.AccountType, account.Status);
             await _mediator.Publish(eventAccCreated, cancellationToken);
             return Unit.Value;

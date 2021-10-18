@@ -9,11 +9,11 @@ namespace PaymentGateway.PublishedLanguage.Events
 {
     public class WithdrawDone: INotification
     {
-        public double Amount;
+        public decimal Amount;
         public string Iban;
         public string Currency;
         public DateTime DateOfOperation;
-        public WithdrawDone(string iban, string currency, double value, DateTime date)
+        public WithdrawDone(string iban, string currency, decimal value, DateTime date)
         {
             this.Currency = currency;
             this.Iban = iban;

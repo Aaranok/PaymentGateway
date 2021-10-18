@@ -8,13 +8,14 @@ namespace PaymentGateway.Models
 {
     public class Transaction
     {
-        public double Amount { get; set; }
+        public decimal Amount { get; set; }
+        public int AccountId { get; set; }
         public DateTime DateOfOperation { get; set; }
         public DateTime DateOfTransaction { get; set; }
         public string Currency { get; set; }
         public string Type { get; set; }
         public int Id { get; set; } 
-        public double Value { get; set; }
+        public decimal Value { get; set; }
         public DateTime GetOpDate()
         {
             return this.DateOfTransaction.AddDays(2);

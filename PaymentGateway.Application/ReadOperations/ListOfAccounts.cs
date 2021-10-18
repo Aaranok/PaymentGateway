@@ -13,13 +13,13 @@ namespace PaymentGateway.Application.ReadOperations
         public class Validator : AbstractValidator<Query>
         {
 
-            public Validator(Database database)
+            public Validator(Data.PaymentDbContext _dbContext)
             {
                 RuleFor(q => q).Must(query =>
                 {
                     var person = query.PersonId.HasValue ?
-                    database.Persons.FirstOrDefault(x => x.PersonID == query.PersonId) :
-                    database.Persons.FirstOrDefault(x => x.Cnp == query.Cnp);
+                    _dbContext.Persons.FirstOrDefault(x => x.PersonID == query.PersonId) :
+                    _dbContext.Persons.FirstOrDefault(x => x.Cnp == query.Cnp);
 
                     return person != null;
                 }).WithMessage("Customer not found");
@@ -28,7 +28,7 @@ namespace PaymentGateway.Application.ReadOperations
 
         public class Validator2 : AbstractValidator<Query>
         {
-            public Validator2(Database database)
+            public Validator2(Data.PaymentDbContext _dbContext)
             {
                 RuleFor(q => q).Must(q =>
                 {
@@ -62,21 +62,21 @@ namespace PaymentGateway.Application.ReadOperations
 
             public class QueryHandler : IRequestHandler<Query, List<Model>>
             {
-                private readonly Database _database;
+                private readonly Data.PaymentDbContext _dbContext;
 
-                public QueryHandler(Database database)
+                public QueryHandler(Data.PaymentDbContext dbContext)
                 {
-                    _database = database;
+                    _dbContext = dbContext;
                 }
 
                 public Task<List<Model>> Handle(Query request, CancellationToken cancellationToken)
                 {
 
                     var person = request.PersonId.HasValue ?
-                       _database.Persons.FirstOrDefault(x => x.PersonID == request.PersonId) :
-                       _database.Persons.FirstOrDefault(x => x.Cnp == request.Cnp);
+                       _dbContext.Persons.FirstOrDefault(x => x.PersonID == request.PersonId) :
+                       _dbContext.Persons.FirstOrDefault(x => x.Cnp == request.Cnp);
 
-                    var db = _database.Accounts.Where(x => x.PersonID == person.PersonID);
+                    var db = _dbContext.Accounts.Where(x => x.PersonID == person.PersonID);
                     var result = db.Select(x => new Model
                     {
                         Balance = x.Balance,
@@ -93,11 +93,11 @@ namespace PaymentGateway.Application.ReadOperations
             public class Model
             {
                 public int Id { get; set; }
-                public double Balance { get; set; }
+                public decimal Balance { get; set; }
                 public string Currency { get; set; }
                 public string Iban { get; set; }
                 public string Status { get; set; }
-                public double Limit { get; set; }
+                public decimal Limit { get; set; }
                 public string Type { get; set; }
             }
         }

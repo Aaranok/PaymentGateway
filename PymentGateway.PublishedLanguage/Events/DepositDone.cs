@@ -11,9 +11,9 @@ namespace PaymentGateway.PublishedLanguage.Events
     {
         public string Iban;
         public string Currency;
-        public double Amount;
+        public decimal Amount;
         public DateTime DateOfOperation;
-        public DepositDone(string iban, string currency, double value, DateTime date)
+        public DepositDone(string iban, string currency, decimal value, DateTime date)
         {
             this.Currency = currency;
             this.Iban = iban;

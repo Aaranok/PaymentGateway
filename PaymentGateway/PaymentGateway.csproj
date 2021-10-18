@@ -7,7 +7,7 @@
 
   <ItemGroup>
     <PackageReference Include="NBB.Core.DependencyInjection" Version="3.4.38" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.2" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
@@ -18,7 +18,9 @@
 	<PackageReference Include="Scrutor" Version="$(ScrutorPackageVersion)"></PackageReference>
   
   </ItemGroup>
-
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="$(MicrosoftEntityFrameworkPackagesVersion)" />
+	</ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PaymentGateway.Data\PaymentGateway.Data.csproj" />
     <ProjectReference Include="..\PaymentGateway.ExternalService\PaymentGateway.ExternalService.csproj" />

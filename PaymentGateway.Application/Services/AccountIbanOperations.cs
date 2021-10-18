@@ -10,16 +10,16 @@ namespace PaymentGateway.Application.ReadOperations
 {
     public class AccountIbanOperations
     {
-        private readonly Database _database;
-        public AccountIbanOperations(Database database)
+        private readonly PaymentDbContext _dbContext;
+        public AccountIbanOperations(PaymentDbContext dbContext)
         {
-            _database = database;
+            _dbContext = dbContext;
         }
 
         public string GetIbanByCnp(string cnp)
         {
 
-            foreach (var item in _database.Persons)
+            foreach (var item in _dbContext.Persons)
             {
                 if (item.Cnp == cnp)
                     return item.Accounts[0].IbanCode;
@@ -29,7 +29,7 @@ namespace PaymentGateway.Application.ReadOperations
         }
         public Account GetAccountByIban(string iban)
         {
-            foreach (var item in _database.Accounts)
+            foreach (var item in _dbContext.Accounts)
             {
                 if (item.IbanCode == iban)
                     return item;

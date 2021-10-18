@@ -36,6 +36,8 @@ namespace PaymentGateway
             var source = new CancellationTokenSource();
             var cancellationToken = source.Token;
             services.RegisterBusinessServices(Configuration);
+            services.AddPaymentDataAccess(Configuration);
+
 
             //services.AddMediatR(typeof(ListOfAccounts).Assembly, typeof(AllEventsHandler).Assembly);
             services.Scan(scan => scan
@@ -57,7 +59,9 @@ namespace PaymentGateway
 
             var serviceProvider = services.BuildServiceProvider();
 
-            var DB = serviceProvider.GetRequiredService<Database>();
+            //var DB = serviceProvider.GetRequiredService<Database>();
+            var DB = serviceProvider.GetRequiredService<PaymentDbContext>();
+
 
             var mediator = serviceProvider.GetRequiredService<IMediator>();
 

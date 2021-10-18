@@ -13,19 +13,19 @@ namespace PaymentGateway.Application.WriteOperations
 {
     public class WithdrawMoney : IRequestHandler<WithdrawMoneyCommand>
     {
-        private readonly Database _database;
+        private readonly Data.PaymentDbContext _dbContext;
         private readonly IMediator _mediator;
 
-        public WithdrawMoney(IMediator mediator, Database database)
+        public WithdrawMoney(IMediator mediator, Data.PaymentDbContext dbContext)
         {
             _mediator = mediator;
-            _database = database;
+            _dbContext = dbContext;
         }
 
         public async Task<Unit> Handle(WithdrawMoneyCommand request, CancellationToken cancellationToken)
         {
-            var accountIdent = new AccountIbanOperations(_database);
-            var account = _database.Accounts.FirstOrDefault(acc => acc.IbanCode == request.Iban);
+            var accountIdent = new AccountIbanOperations(_dbContext);
+            var account = _dbContext.Accounts.FirstOrDefault(acc => acc.IbanCode == request.Iban);
 
             if (account == null)
             {
@@ -47,7 +47,7 @@ namespace PaymentGateway.Application.WriteOperations
             transaction.DateOfOperation = transaction.GetOpDate();
 
             account.Balance -= transaction.Amount;
-            _database.SaveChange();
+            _dbContext.SaveChange();
             WithdrawDone eventWitDone = new(request.Iban, request.Currency, request.Amount, request.DateOfOperation);
             await _mediator.Publish(eventWitDone, cancellationToken);
             return Unit.Value;
