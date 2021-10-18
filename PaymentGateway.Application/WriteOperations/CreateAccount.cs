@@ -1,6 +1,4 @@
-﻿using PaymentGateway.Application.ReadOperations;
-using PaymentGateway.Data;
-using PaymentGateway.Models;
+﻿using PaymentGateway.Models;
 using PaymentGateway.PublishedLanguage.Events;
 using PaymentGateway.PublishedLanguage.Commands;
 using System;

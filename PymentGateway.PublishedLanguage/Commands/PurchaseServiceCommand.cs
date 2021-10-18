@@ -9,7 +9,5 @@ namespace PaymentGateway.PublishedLanguage.Commands
         public string Cnp { get; set; }
         public string PersonName { get; set; }
         public DateTime DateOfTransaction { get; set; }
-        //public List<ServiceList> Product = new();
-
     }
 }

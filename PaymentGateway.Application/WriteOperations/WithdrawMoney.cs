@@ -24,7 +24,6 @@ namespace PaymentGateway.Application.WriteOperations
 
         public async Task<Unit> Handle(WithdrawMoneyCommand request, CancellationToken cancellationToken)
         {
-            var accountIdent = new AccountIbanOperations(_dbContext);
             var account = _dbContext.Accounts.FirstOrDefault(acc => acc.IbanCode == request.Iban);
 
             if (account == null)
@@ -39,6 +38,7 @@ namespace PaymentGateway.Application.WriteOperations
 
             Transaction transaction = new()
             {
+                AccountId = account.Id,
                 Amount = -request.Amount,
                 Currency = request.Currency,
                 Type = "Withdraw",

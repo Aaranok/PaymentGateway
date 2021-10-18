@@ -110,7 +110,7 @@ namespace PaymentGateway.Data
 
             modelBuilder.Entity<ProductXtransaction>(entity =>
             {
-                entity.HasKey(e => new { e.IdTransaction, e.IdService })
+                entity.HasKey(e => new { e.IdTransaction, e.IdProduct })
                     .HasName("PK_ServiceXTransaction");
 
                 entity.ToTable("ProductXTransaction");
@@ -119,7 +119,7 @@ namespace PaymentGateway.Data
 
                 entity.HasOne(d => d.IdServiceNavigation)
                     .WithMany(p => p.ProductXtransactions)
-                    .HasForeignKey(d => d.IdService)
+                    .HasForeignKey(d => d.IdProduct)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_ServiceXTransaction_Service");
 

@@ -8,7 +8,7 @@ namespace PaymentGateway.Models
     public partial class ProductXtransaction
     {
         public int IdTransaction { get; set; }
-        public int IdService { get; set; }
+        public int IdProduct { get; set; }
         public int NoPurchased { get; set; }
         public decimal Value { get; set; }
 

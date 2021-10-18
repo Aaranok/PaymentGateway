@@ -1,8 +1,5 @@
 ﻿using MediatR;
-using PaymentGateway.Application.ReadOperations;
-using PaymentGateway.Data;
 using PaymentGateway.Models;
-using PaymentGateway.PublishedLanguage.Events;
 using PaymentGateway.PublishedLanguage.Commands;
 using System;
 using System.Linq;
@@ -12,7 +9,7 @@ using System.Threading.Tasks;
 namespace PaymentGateway.Application.WriteOperations
 {
 
-    public class PurchaseService: IRequestHandler<PurchaseServiceCommand>
+    public class PurchaseService: IRequestHandler<Command>
     {
         private readonly Data.PaymentDbContext _dbContext;
         private readonly IMediator _mediator;
@@ -23,16 +20,70 @@ namespace PaymentGateway.Application.WriteOperations
             _dbContext = dbContext;
         }
 
-        public Task<Unit> Handle(PurchaseServiceCommand request, CancellationToken cancellationToken)
+        public Task<Unit> Handle(Command request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var account = _dbContext.Accounts.FirstOrDefault(account => account.IbanCode == request.Iban);
+
+            if (account == null)
+            {
+                throw new Exception("Account not found");
+            }
+
+            decimal totalValue = 0;
+            string currency = "";
+
+            var transaction = new Transaction
+            {
+                Currency = account.Currency,
+                DateOfTransaction = DateTime.UtcNow,
+                DateOfOperation = DateTime.UtcNow,
+                Type = "Purchase",
+                AccountId = account.Id
+            };
+            _dbContext.Transactions.Add(transaction);
+            _dbContext.SaveChanges();
+            //int auxTransId = _dbContext.Transactions.Last().Id;
+            foreach (var item in request.Details)
+            {
+                Product product = _dbContext.Products.FirstOrDefault(x => x.Id == item.ProductId);
+                if (product == null)
+                {
+                    throw new Exception("Product not found");
+                }
+                if (product.Limit < item.NoPurchased)
+                {
+                    throw new Exception("Not enough items in storage");
+                }
+                totalValue += product.Value * item.NoPurchased;
+                currency = product.Currency;
+                product.Limit -= item.NoPurchased;
+
+                if (account.Balance < totalValue)
+                {
+                    throw new Exception("Not enough capital");
+                }
+                decimal value = item.NoPurchased * product.Value;
+                var pxt = new ProductXtransaction
+                {
+                    IdProduct = product.Id,
+                    IdTransaction = transaction.Id,
+                    NoPurchased = item.NoPurchased,
+                    Value = value
+                };
+                product.Limit -= item.NoPurchased;
+
+                _dbContext.ProductXtransactions.Add(pxt);
+            }
+            transaction.Amount = -totalValue;
+
+            _dbContext.SaveChanges();
+            return Unit.Task;
         }
         /*
 public async Task<Unit> Handle(PurchaseServiceCommand request, CancellationToken cancellationToken)
 {
    //var accountIdent = new AccountIbanOperations(_dbContext);
    var account = _dbContext.Accounts.FirstOrDefault(account=> account.IbanCode == request.Iban);
-
 
    if (account == null)
    {

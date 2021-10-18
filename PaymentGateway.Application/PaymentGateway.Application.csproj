@@ -17,6 +17,7 @@
 		<PackageReference Include="FluentValidation" Version="$(FluentValidationPackageVersion)" />
 	</ItemGroup>
 	<ItemGroup>
+		<Folder Include="Services\" />
 		<Folder Include="Validators\" />
 	</ItemGroup>
 	<ItemGroup>

@@ -14,6 +14,8 @@ using System.Threading;
 using PaymentGateway.PublishedLanguage.Events;
 using FluentValidation;
 using System.Linq;
+using PaymentGateway.Models;
+using System.Collections.Generic;
 
 namespace PaymentGateway
 {
@@ -64,9 +66,9 @@ namespace PaymentGateway
 
             EnrollCustomerCommand customer1 = new()
             {
-                Name = "Gigi",
+                Name = "Magnat",
                 Currency = "$",
-                Cnp = "1234141341124",
+                Cnp = "1111142541124",
                 ClientType = "Individual",
                 AccountType = "Credit"
             };
@@ -75,11 +77,11 @@ namespace PaymentGateway
 
             CreateAccountCommand account1 = new()
             {
-                AccountType = "Credit",
-                Cnp = "1234141341124",
+                AccountType = "Unlimited",
+                Cnp = "1111142541124",
                 Currency = "$",
                 Limit = 10000,
-                Name = "Gigi"
+                Name = "Magnat"
             };
 
             await mediator.Send(account1, cancellationToken);
@@ -89,10 +91,8 @@ namespace PaymentGateway
                 DateOfTransaction = DateTime.UtcNow.AddDays(-3),
                 DateOfOperation = DateTime.UtcNow,
                 Currency = "$",
-                Amount = 300
+                Amount = 70000
             };
-            AccountIbanOperations getIbanOp = new(DB);
-            //depMoney.Iban = getIbanOp.GetIbanByCnp(account1.Cnp);//fix this // probably fixed
             var auxPers = DB.People.FirstOrDefault(pers => pers.Cnp == account1.Cnp);
             var auxAcc = DB.Accounts.FirstOrDefault(Acc => Acc.PersonId == auxPers.Id);
 
@@ -134,6 +134,7 @@ namespace PaymentGateway
             await mediator.Send(createServCmd2, cancellationToken);
             /*
             PurchaseServiceCommand purchaseService = new()
+            Command cmd = new()
             {
                 Iban = getIbanOp.GetIbanByCnp(account1.Cnp),
                 PersonName = "Gigi",
@@ -155,6 +156,34 @@ namespace PaymentGateway
 
             await mediator.Send(purchaseService, cancellationToken);
             */
+
+            var listaProduse = new List<CommandDetails>();
+
+            var prodCmd1 = new CommandDetails
+            {
+                ProductId = 1,
+                NoPurchased = 5
+            };
+            listaProduse.Add(prodCmd1);
+
+            var prodCmd2 = new CommandDetails
+            {
+                ProductId = 6,
+                NoPurchased = 1
+            };
+            listaProduse.Add(prodCmd2);
+
+            var comanda = new Command
+            {
+                Details = listaProduse,
+                Iban = depMoney.Iban//just for mock
+            };
+
+            //var purchaseProduct = serviceProvider.GetRequiredService<PurchaseProduct>();
+            //purchaseProduct.Handle(comanda, default).GetAwaiter().GetResult();
+            await mediator.Send(comanda, cancellationToken);
+
+
             var query = new ListOfAccounts.Query
             {
                PersonId = 1
